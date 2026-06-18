@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biological Molecules</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALB1. Biological Molecules</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/QN4hqLdC48g" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+
+<details open>
+<summary>0:00 - 0:24 | Introduction to Biological Molecules</summary>
+<ul>
+<li>This video introduces biological molecules and why they are important in living organisms.</li>
+<li>It covers the four main types of biological molecules.</li>
+<li>It explains monomers, polymers, condensation reactions, and hydrolysis reactions.</li>
+<li>These ideas help explain how large, complex molecules are built and broken down in cells.</li>
+</ul>
+</details>
+<details>
+<summary>0:25 - 1:11 | Four Main Types and Carbon</summary>
+<ul>
+<li>The four main types of biological molecules are carbohydrates, lipids, proteins, and nucleic acids.</li>
+<li>They are called organic molecules because they contain carbon.</li>
+<li>Carbon can form four covalent bonds with other carbon atoms or different elements.</li>
+<li>Carbon bonds can be single or double bonds, allowing many complex structures to form.</li>
+<li>Covalent bonds are strong because electrons are shared between atoms.</li>
+</ul>
+</details>
+<details>
+<summary>1:12 - 1:50 | Elements in Biological Molecules</summary>
+<ul>
+<li>All four main biological molecules contain carbon, hydrogen, and oxygen.</li>
+<li>Carbohydrates contain only carbon, hydrogen, and oxygen.</li>
+<li>Lipids, proteins, and nucleic acids can contain extra elements.</li>
+<li>Proteins always contain nitrogen.</li>
+<li>Nucleic acids always contain nitrogen and phosphorus.</li>
+</ul>
+</details>
+<details>
+<summary>1:51 - 3:31 | Monomers, Polymers, and Polymerisation</summary>
+<ul>
+<li>Monomers are small basic units that join together to form larger molecules.</li>
+<li>In carbohydrates, the monomers are monosaccharides, such as glucose.</li>
+<li>In proteins, the monomers are amino acids.</li>
+<li>In nucleic acids, the monomers are nucleotides.</li>
+<li>Polymers are large molecules made from many repeating monomer subunits.</li>
+<li>Carbohydrate polymers are polysaccharides, such as glycogen.</li>
+<li>Protein polymers are polypeptides, made from many amino acids.</li>
+<li>Nucleic acid polymers are polynucleotides, such as DNA strands.</li>
+<li>Polymerisation is the process where monomers join to form polymers.</li>
+<li>Lipids are made from subunits like glycerol and fatty acids, but they are not true polymers because they are not made of repeating units.</li>
+</ul>
+</details>
+<details>
+<summary>3:32 - 4:26 | Condensation Reactions</summary>
+<ul>
+<li>Condensation reactions are used to synthesise, or make, many polymers.</li>
+<li>In a condensation reaction, water is removed to form a chemical bond between molecules.</li>
+<li>A hydroxyl group from one molecule and a hydrogen atom from another molecule are removed.</li>
+<li>The removed parts form a molecule of water.</li>
+<li>Energy is required for condensation reactions, and this energy is supplied by ATP.</li>
+<li>When amino acids join to form a polypeptide, one water molecule is released for each additional amino acid added.</li>
+</ul>
+</details>
+<details>
+<summary>4:27 - 5:02 | Hydrolysis Reactions</summary>
+<ul>
+<li>Hydrolysis reactions break polymers or large molecules, such as lipids, into their subunits.</li>
+<li>Water is used to break a chemical bond between molecules.</li>
+<li>Splitting water provides the H and OH groups needed to separate the subunits.</li>
+<li>Hydrolysis reactions release energy.</li>
+<li>A polypeptide can be broken down into amino acids by hydrolysis.</li>
+</ul>
+</details>
+
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+  {
+    "type": "mcq",
+    "question": "What are the four main types of biological molecules?",
+    "options": [
+      "Carbohydrates, lipids, proteins, and nucleic acids",
+      "Water, oxygen, carbon dioxide, and nitrogen",
+      "Glucose, ATP, DNA, and enzymes"
+    ],
+    "answer": 0,
+    "explanation": "The four main biological molecules are carbohydrates, lipids, proteins, and nucleic acids."
+  },
+  {
+    "type": "fill",
+    "question": "Biological molecules are called organic because they contain ______.",
+    "answerText": "carbon",
+    "explanation": "Organic molecules contain carbon."
+  },
+  {
+    "type": "mcq",
+    "question": "How many covalent bonds can carbon form?",
+    "options": [
+      "Four",
+      "Two",
+      "Eight"
+    ],
+    "answer": 0,
+    "explanation": "Carbon can form four covalent bonds."
+  },
+  {
+    "type": "fill",
+    "question": "Carbon can form single bonds and ______ bonds.",
+    "answerText": "double",
+    "explanation": "Carbon can form both single and double bonds."
+  },
+  {
+    "type": "mcq",
+    "question": "Why are covalent bonds strong?",
+    "options": [
+      "Electrons are shared between atoms",
+      "Atoms disappear during bonding",
+      "They only exist in water"
+    ],
+    "answer": 0,
+    "explanation": "Covalent bonds are strong because electrons are shared between atoms."
+  },
+  {
+    "type": "fill",
+    "question": "All four main biological molecules contain carbon, hydrogen, and ______.",
+    "answerText": "oxygen",
+    "explanation": "Carbohydrates, lipids, proteins, and nucleic acids all contain carbon, hydrogen, and oxygen."
+  },
+  {
+    "type": "mcq",
+    "question": "Which elements do carbohydrates contain?",
+    "options": [
+      "Carbon, hydrogen, and oxygen only",
+      "Carbon and nitrogen only",
+      "Hydrogen and phosphorus only"
+    ],
+    "answer": 0,
+    "explanation": "Carbohydrates contain only carbon, hydrogen, and oxygen."
+  },
+  {
+    "type": "fill",
+    "question": "Proteins always contain at least some ______.",
+    "answerText": "nitrogen",
+    "explanation": "Proteins always contain nitrogen."
+  },
+  {
+    "type": "mcq",
+    "question": "Which elements do nucleic acids always contain in addition to carbon, hydrogen, and oxygen?",
+    "options": [
+      "Nitrogen and phosphorus",
+      "Sulfur and calcium",
+      "Sodium and chlorine"
+    ],
+    "answer": 0,
+    "explanation": "Nucleic acids always contain nitrogen and phosphorus."
+  },
+  {
+    "type": "fill",
+    "question": "Monomers are small basic ______.",
+    "answerText": "units",
+    "explanation": "Monomers are small basic units that can join together."
+  },
+  {
+    "type": "mcq",
+    "question": "What do monomers join together to form?",
+    "options": [
+      "Polymers",
+      "Atoms only",
+      "Water only"
+    ],
+    "answer": 0,
+    "explanation": "Monomers join together to form polymers."
+  },
+  {
+    "type": "fill",
+    "question": "The monomers of carbohydrates are called ______.",
+    "answerText": "monosaccharides",
+    "explanation": "Carbohydrate monomers are monosaccharides."
+  },
+  {
+    "type": "mcq",
+    "question": "Which molecule is an example of a monosaccharide?",
+    "options": [
+      "Glucose",
+      "Glycogen",
+      "DNA"
+    ],
+    "answer": 0,
+    "explanation": "Glucose is a simple sugar and an example of a monosaccharide."
+  },
+  {
+    "type": "fill",
+    "question": "The monomers of proteins are amino ______.",
+    "answerText": "acids",
+    "explanation": "Protein monomers are amino acids."
+  },
+  {
+    "type": "mcq",
+    "question": "What are the monomers of nucleic acids called?",
+    "options": [
+      "Nucleotides",
+      "Fatty acids",
+      "Amino acids"
+    ],
+    "answer": 0,
+    "explanation": "Nucleic acid monomers are nucleotides."
+  },
+  {
+    "type": "fill",
+    "question": "Polymers are large molecules made from many repeating monomer ______.",
+    "answerText": "subunits",
+    "explanation": "Polymers are made of repeating monomer subunits."
+  },
+  {
+    "type": "mcq",
+    "question": "What are carbohydrate polymers called?",
+    "options": [
+      "Polysaccharides",
+      "Polypeptides",
+      "Polynucleotides"
+    ],
+    "answer": 0,
+    "explanation": "Carbohydrate polymers are called polysaccharides."
+  },
+  {
+    "type": "fill",
+    "question": "Glycogen is made from many glucose ______.",
+    "answerText": "monomers",
+    "explanation": "Glycogen is a polysaccharide made from many glucose monomers."
+  },
+  {
+    "type": "mcq",
+    "question": "What are protein polymers called?",
+    "options": [
+      "Polypeptides",
+      "Polysaccharides",
+      "Nucleotides"
+    ],
+    "answer": 0,
+    "explanation": "Protein polymers are called polypeptides."
+  },
+  {
+    "type": "fill",
+    "question": "Polypeptides are made from many amino ______.",
+    "answerText": "acids",
+    "explanation": "Polypeptides are made from amino acid monomers."
+  },
+  {
+    "type": "mcq",
+    "question": "What are nucleic acid polymers called?",
+    "options": [
+      "Polynucleotides",
+      "Polypeptides",
+      "Monosaccharides"
+    ],
+    "answer": 0,
+    "explanation": "Nucleic acid polymers are called polynucleotides."
+  },
+  {
+    "type": "fill",
+    "question": "Each strand of DNA is a long chain of nucleotide ______.",
+    "answerText": "monomers",
+    "explanation": "DNA strands are long chains of nucleotide monomers."
+  },
+  {
+    "type": "mcq",
+    "question": "What is polymerisation?",
+    "options": [
+      "The process where monomers join to form polymers",
+      "The process where water freezes",
+      "The process where atoms stop bonding"
+    ],
+    "answer": 0,
+    "explanation": "Polymerisation is when monomers join to form polymers."
+  },
+  {
+    "type": "fill",
+    "question": "Lipids are made from subunits such as glycerol and fatty ______.",
+    "answerText": "acids",
+    "explanation": "Lipids are made from glycerol and fatty acids."
+  },
+  {
+    "type": "mcq",
+    "question": "Why are lipids not true polymers?",
+    "options": [
+      "They are not made of repeating units",
+      "They contain no atoms",
+      "They are always nucleic acids"
+    ],
+    "answer": 0,
+    "explanation": "Lipids are not true polymers because they are not made from repeating monomer units."
+  },
+  {
+    "type": "fill",
+    "question": "Condensation reactions are used to ______ many polymers.",
+    "answerText": "synthesise",
+    "explanation": "Condensation reactions synthesise, or make, many polymers."
+  },
+  {
+    "type": "mcq",
+    "question": "What happens to water in a condensation reaction?",
+    "options": [
+      "Water is removed",
+      "Water is frozen",
+      "Water is turned into carbon"
+    ],
+    "answer": 0,
+    "explanation": "In condensation, water is removed to form a chemical bond."
+  },
+  {
+    "type": "fill",
+    "question": "A condensation reaction forms a chemical ______ between molecules.",
+    "answerText": "bond",
+    "explanation": "Condensation forms a chemical bond between molecules."
+  },
+  {
+    "type": "mcq",
+    "question": "Which parts are removed during a condensation reaction?",
+    "options": [
+      "A hydroxyl group and a hydrogen atom",
+      "Two carbon atoms",
+      "Two phosphate groups"
+    ],
+    "answer": 0,
+    "explanation": "A hydroxyl group from one molecule and a hydrogen from another are removed."
+  },
+  {
+    "type": "fill",
+    "question": "The removed hydroxyl group and hydrogen form a molecule of ______.",
+    "answerText": "water",
+    "explanation": "The removed groups combine to form water."
+  },
+  {
+    "type": "mcq",
+    "question": "What molecule supplies energy for condensation reactions?",
+    "options": [
+      "ATP",
+      "DNA",
+      "Glucose only"
+    ],
+    "answer": 0,
+    "explanation": "ATP supplies the energy needed for condensation reactions."
+  },
+  {
+    "type": "fill",
+    "question": "When amino acids join to form a polypeptide, one molecule of ______ is released each time.",
+    "answerText": "water",
+    "explanation": "One water molecule is released for each additional amino acid added."
+  },
+  {
+    "type": "mcq",
+    "question": "What do hydrolysis reactions do?",
+    "options": [
+      "Break large molecules into subunits",
+      "Join monomers into polymers",
+      "Create carbon atoms"
+    ],
+    "answer": 0,
+    "explanation": "Hydrolysis breaks polymers or large molecules into subunits."
+  },
+  {
+    "type": "fill",
+    "question": "In hydrolysis, water is used to break a chemical ______.",
+    "answerText": "bond",
+    "explanation": "Hydrolysis uses water to break chemical bonds."
+  },
+  {
+    "type": "mcq",
+    "question": "What does splitting water provide during hydrolysis?",
+    "options": [
+      "H and OH groups",
+      "Carbon dioxide only",
+      "ATP only"
+    ],
+    "answer": 0,
+    "explanation": "Splitting water provides the H and OH groups needed to separate subunits."
+  },
+  {
+    "type": "fill",
+    "question": "Hydrolysis reactions release ______.",
+    "answerText": "energy",
+    "explanation": "Hydrolysis reactions release energy."
+  },
+  {
+    "type": "mcq",
+    "question": "What can hydrolysis break a polypeptide into?",
+    "options": [
+      "Amino acids",
+      "Glucose monomers",
+      "Fatty acids only"
+    ],
+    "answer": 0,
+    "explanation": "Hydrolysis can break a polypeptide into amino acids."
+  },
+  {
+    "type": "fill",
+    "question": "A polysaccharide is a carbohydrate ______.",
+    "answerText": "polymer",
+    "explanation": "Polysaccharides are carbohydrate polymers."
+  },
+  {
+    "type": "mcq",
+    "question": "Which example is a nucleic acid polymer?",
+    "options": [
+      "DNA",
+      "Glucose",
+      "Glycerol"
+    ],
+    "answer": 0,
+    "explanation": "DNA is a nucleic acid polymer made of nucleotide monomers."
+  },
+  {
+    "type": "fill",
+    "question": "Large complex biological molecules are essential for ______.",
+    "answerText": "life",
+    "explanation": "Large complex biological molecules are essential for life."
+  }
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
