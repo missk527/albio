@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scalars and Vectors</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>AL Biology 2. Carbohydrates: Monosaccharides and Disaccharides</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/1ibWOa-S4bI" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+
+<details open>
+<summary>0:00 - 0:24 | Introduction to Carbohydrates</summary>
+<ul>
+<li>This video explains carbohydrates, with a focus on monosaccharides and disaccharides.</li>
+<li>It introduces what carbohydrates are and how simple carbohydrates are classified.</li>
+<li>The video also explains how disaccharides are formed and broken down.</li>
+</ul>
+</details>
+<details>
+<summary>0:24 - 0:58 | What Carbohydrates Are</summary>
+<ul>
+<li>Carbohydrates are biological molecules made only from carbon, hydrogen, and oxygen.</li>
+<li>The word carbohydrate gives clues about their composition: carbo means carbon, and hydrate refers to hydrogen and oxygen.</li>
+<li>Hydrogen and oxygen are usually present in a 2:1 ratio, similar to water.</li>
+<li>Carbohydrates can be represented by the general formula Cx(H2O)y.</li>
+</ul>
+</details>
+<details>
+<summary>0:58 - 1:55 | Functions of Carbohydrates</summary>
+<ul>
+<li>Simple carbohydrates such as glucose provide energy directly to cells during respiration.</li>
+<li>Complex carbohydrates store energy, such as starch in plants and glycogen in animals.</li>
+<li>Some carbohydrates form structural materials, including cellulose in plant cell walls and chitin in insect exoskeletons.</li>
+<li>Carbohydrates also help with cell recognition through glycoproteins.</li>
+<li>Simple sugars such as ribose and deoxyribose are used to build nucleic acids like RNA and DNA.</li>
+</ul>
+</details>
+<details>
+<summary>1:55 - 2:20 | Main Types of Carbohydrates</summary>
+<ul>
+<li>The three main types of carbohydrates are monosaccharides, disaccharides, and polysaccharides.</li>
+<li>This video focuses on monosaccharides and disaccharides.</li>
+<li>Monosaccharides and disaccharides are simple carbohydrates and are often called sugars.</li>
+</ul>
+</details>
+<details>
+<summary>2:20 - 3:05 | Monosaccharides</summary>
+<ul>
+<li>Monosaccharides are simple sugars.</li>
+<li>Many monosaccharides follow the general formula CnH2nOn, where n is usually from 3 to 7.</li>
+<li>They are classified by the number of carbon atoms they contain.</li>
+<li>Pentose sugars such as ribose and deoxyribose have five carbon atoms.</li>
+<li>Hexose sugars such as glucose, fructose, and galactose have six carbon atoms.</li>
+</ul>
+</details>
+<details>
+<summary>3:05 - 3:55 | Alpha and Beta Glucose</summary>
+<ul>
+<li>Glucose is a common example of a hexose sugar.</li>
+<li>In glucose rings, carbon atoms are numbered starting from carbon 1 beside the oxygen and then moving clockwise.</li>
+<li>Glucose has two forms: alpha glucose and beta glucose.</li>
+<li>The two forms differ in the position of the hydroxyl group on carbon 1.</li>
+<li>Alpha glucose has the hydroxyl group below carbon 1, while beta glucose has it above carbon 1.</li>
+</ul>
+</details>
+<details>
+<summary>3:55 - 4:35 | Key Properties of Glucose</summary>
+<ul>
+<li>Glucose is soluble in water because water molecules can form hydrogen bonds with its hydroxyl groups.</li>
+<li>This solubility allows glucose to be transported easily in blood plasma.</li>
+<li>Glucose is energy-rich because its bonds store energy.</li>
+<li>Energy is released when these bonds are broken during respiration.</li>
+</ul>
+</details>
+<details>
+<summary>4:35 - 5:35 | Disaccharides and Condensation</summary>
+<ul>
+<li>Disaccharides form when two monosaccharides join together.</li>
+<li>The joining reaction is called a condensation reaction.</li>
+<li>A hydroxyl group from one monosaccharide reacts with a hydroxyl group from another monosaccharide.</li>
+<li>This forms a covalent glycosidic bond and releases one molecule of water.</li>
+<li>A glycosidic bond can form between different hydroxyl groups, not only between carbon 1 and carbon 4.</li>
+</ul>
+</details>
+<details>
+<summary>5:35 - 6:05 | Examples of Disaccharides</summary>
+<ul>
+<li>Maltose is made from two glucose molecules.</li>
+<li>Sucrose is made from glucose and fructose.</li>
+<li>Lactose is made from glucose and galactose.</li>
+</ul>
+</details>
+<details>
+<summary>6:05 - 6:35 | Hydrolysis of Disaccharides</summary>
+<ul>
+<li>Hydrolysis reactions break disaccharides down into monosaccharides.</li>
+<li>Water is added during hydrolysis.</li>
+<li>The added water breaks the glycosidic bond between the two monosaccharides.</li>
+</ul>
+</details>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+  {
+    "type": "mcq",
+    "question": "Which elements are found in carbohydrates?",
+    "options": [
+      "Carbon, hydrogen, and oxygen",
+      "Carbon, nitrogen, and sulfur",
+      "Hydrogen, oxygen, and iron"
+    ],
+    "answer": 0,
+    "explanation": "Carbohydrates contain carbon, hydrogen, and oxygen."
+  },
+  {
+    "type": "fill",
+    "question": "Carbohydrates are biological molecules made from carbon, hydrogen, and ______.",
+    "answerText": "oxygen",
+    "explanation": "The three elements in carbohydrates are carbon, hydrogen, and oxygen."
+  },
+  {
+    "type": "mcq",
+    "question": "What does 'carbo' refer to in carbohydrate?",
+    "options": [
+      "Carbon",
+      "Water",
+      "Protein"
+    ],
+    "answer": 0,
+    "explanation": "Carbo refers to carbon."
+  },
+  {
+    "type": "fill",
+    "question": "In carbohydrates, hydrogen and oxygen are usually present in a ______ ratio.",
+    "answerText": "2:1",
+    "explanation": "Hydrogen and oxygen are present in a 2:1 ratio, like in water."
+  },
+  {
+    "type": "mcq",
+    "question": "Which formula can represent carbohydrates generally?",
+    "options": [
+      "Cx(H2O)y",
+      "NaCl",
+      "CH4 only"
+    ],
+    "answer": 0,
+    "explanation": "Carbohydrates can be represented as Cx(H2O)y."
+  },
+  {
+    "type": "fill",
+    "question": "Glucose can supply energy directly to cells during ______.",
+    "answerText": "respiration",
+    "explanation": "Glucose releases energy during respiration."
+  },
+  {
+    "type": "mcq",
+    "question": "Which carbohydrate stores energy in plants?",
+    "options": [
+      "Starch",
+      "Glycogen",
+      "Chitin"
+    ],
+    "answer": 0,
+    "explanation": "Plants store energy as starch."
+  },
+  {
+    "type": "fill",
+    "question": "Animals often store carbohydrate energy as ______.",
+    "answerText": "glycogen",
+    "explanation": "Glycogen is the storage carbohydrate in animals."
+  },
+  {
+    "type": "mcq",
+    "question": "Which carbohydrate is found in plant cell walls?",
+    "options": [
+      "Cellulose",
+      "Sucrose",
+      "Maltose"
+    ],
+    "answer": 0,
+    "explanation": "Cellulose is a structural carbohydrate in plant cell walls."
+  },
+  {
+    "type": "fill",
+    "question": "Chitin is found in insect ______.",
+    "answerText": "exoskeletons",
+    "explanation": "Chitin forms part of insect exoskeletons."
+  },
+  {
+    "type": "mcq",
+    "question": "What are glycoproteins?",
+    "options": [
+      "Proteins with carbohydrate parts attached",
+      "Sugars with no function",
+      "Only storage molecules"
+    ],
+    "answer": 0,
+    "explanation": "Glycoproteins are proteins with carbohydrate parts attached."
+  },
+  {
+    "type": "fill",
+    "question": "Ribose is needed to make the nucleic acid ______.",
+    "answerText": "rna",
+    "explanation": "Ribose is part of RNA."
+  },
+  {
+    "type": "mcq",
+    "question": "Which sugar is needed to make DNA?",
+    "options": [
+      "Deoxyribose",
+      "Fructose",
+      "Galactose"
+    ],
+    "answer": 0,
+    "explanation": "Deoxyribose is used to make DNA."
+  },
+  {
+    "type": "fill",
+    "question": "The three main carbohydrate groups are monosaccharides, disaccharides, and ______.",
+    "answerText": "polysaccharides",
+    "explanation": "Polysaccharides are the third main group of carbohydrates."
+  },
+  {
+    "type": "mcq",
+    "question": "Monosaccharides and disaccharides are often called what?",
+    "options": [
+      "Sugars",
+      "Lipids",
+      "Amino acids"
+    ],
+    "answer": 0,
+    "explanation": "Simple carbohydrates are often called sugars."
+  },
+  {
+    "type": "fill",
+    "question": "Monosaccharides are simple ______.",
+    "answerText": "sugars",
+    "explanation": "Monosaccharides are simple sugars."
+  },
+  {
+    "type": "mcq",
+    "question": "Many monosaccharides have which general formula?",
+    "options": [
+      "CnH2nOn",
+      "C6H12N6",
+      "H2O only"
+    ],
+    "answer": 0,
+    "explanation": "Many monosaccharides follow CnH2nOn."
+  },
+  {
+    "type": "fill",
+    "question": "Monosaccharides are classified by the number of ______ atoms they contain.",
+    "answerText": "carbon",
+    "explanation": "They are grouped according to carbon atom number."
+  },
+  {
+    "type": "mcq",
+    "question": "How many carbon atoms are in a pentose sugar?",
+    "options": [
+      "Five",
+      "Six",
+      "Seven"
+    ],
+    "answer": 0,
+    "explanation": "Pentose sugars contain five carbon atoms."
+  },
+  {
+    "type": "fill",
+    "question": "Ribose and deoxyribose are ______ sugars.",
+    "answerText": "pentose",
+    "explanation": "Ribose and deoxyribose each contain five carbons."
+  },
+  {
+    "type": "mcq",
+    "question": "How many carbon atoms are in a hexose sugar?",
+    "options": [
+      "Six",
+      "Five",
+      "Three"
+    ],
+    "answer": 0,
+    "explanation": "Hexose sugars contain six carbon atoms."
+  },
+  {
+    "type": "fill",
+    "question": "Glucose, fructose, and galactose are ______ sugars.",
+    "answerText": "hexose",
+    "explanation": "These sugars each have six carbon atoms."
+  },
+  {
+    "type": "mcq",
+    "question": "Which molecule is a common example of a hexose sugar?",
+    "options": [
+      "Glucose",
+      "Ribose",
+      "Deoxyribose"
+    ],
+    "answer": 0,
+    "explanation": "Glucose is a common hexose sugar."
+  },
+  {
+    "type": "fill",
+    "question": "Glucose has two forms: alpha glucose and ______ glucose.",
+    "answerText": "beta",
+    "explanation": "The two forms are alpha glucose and beta glucose."
+  },
+  {
+    "type": "mcq",
+    "question": "What differs between alpha glucose and beta glucose?",
+    "options": [
+      "The position of the hydroxyl group on carbon 1",
+      "The number of oxygen atoms only",
+      "The presence of nitrogen"
+    ],
+    "answer": 0,
+    "explanation": "They differ in the hydroxyl group position on carbon 1."
+  },
+  {
+    "type": "fill",
+    "question": "In alpha glucose, the hydroxyl group on carbon 1 is ______ the carbon.",
+    "answerText": "below",
+    "explanation": "Alpha glucose has the hydroxyl group below carbon 1."
+  },
+  {
+    "type": "mcq",
+    "question": "In beta glucose, where is the hydroxyl group on carbon 1?",
+    "options": [
+      "Above the carbon",
+      "Below the carbon",
+      "Missing completely"
+    ],
+    "answer": 0,
+    "explanation": "Beta glucose has the hydroxyl group above carbon 1."
+  },
+  {
+    "type": "fill",
+    "question": "Glucose dissolves easily in water, so it is ______.",
+    "answerText": "soluble",
+    "explanation": "Soluble means able to dissolve in water."
+  },
+  {
+    "type": "mcq",
+    "question": "Why is glucose soluble in water?",
+    "options": [
+      "It forms hydrogen bonds with water",
+      "It contains iron",
+      "It is a lipid"
+    ],
+    "answer": 0,
+    "explanation": "Water forms hydrogen bonds with glucose hydroxyl groups."
+  },
+  {
+    "type": "fill",
+    "question": "Glucose can be transported around the body in blood ______.",
+    "answerText": "plasma",
+    "explanation": "Blood plasma is mostly water, so soluble glucose can be transported in it."
+  },
+  {
+    "type": "mcq",
+    "question": "Why is glucose energy-rich?",
+    "options": [
+      "Its bonds store a lot of energy",
+      "It has no bonds",
+      "It cannot dissolve"
+    ],
+    "answer": 0,
+    "explanation": "Energy is stored in glucose bonds."
+  },
+  {
+    "type": "fill",
+    "question": "Energy is released when glucose bonds are ______.",
+    "answerText": "broken",
+    "explanation": "Breaking glucose bonds releases energy."
+  },
+  {
+    "type": "mcq",
+    "question": "How are disaccharides formed?",
+    "options": [
+      "By joining two monosaccharides",
+      "By joining two proteins",
+      "By breaking down DNA"
+    ],
+    "answer": 0,
+    "explanation": "A disaccharide is made from two monosaccharides."
+  },
+  {
+    "type": "fill",
+    "question": "The reaction that joins two monosaccharides is called a ______ reaction.",
+    "answerText": "condensation",
+    "explanation": "Condensation joins monosaccharides and releases water."
+  },
+  {
+    "type": "mcq",
+    "question": "What bond joins monosaccharides in a disaccharide?",
+    "options": [
+      "Glycosidic bond",
+      "Peptide bond",
+      "Ionic bond only"
+    ],
+    "answer": 0,
+    "explanation": "Monosaccharides are joined by glycosidic bonds."
+  },
+  {
+    "type": "fill",
+    "question": "A condensation reaction releases a molecule of ______.",
+    "answerText": "water",
+    "explanation": "Water is released during condensation."
+  },
+  {
+    "type": "mcq",
+    "question": "What is maltose made from?",
+    "options": [
+      "Two glucose molecules",
+      "Glucose and fructose",
+      "Glucose and galactose"
+    ],
+    "answer": 0,
+    "explanation": "Maltose contains two glucose molecules."
+  },
+  {
+    "type": "fill",
+    "question": "Sucrose is made from glucose and ______.",
+    "answerText": "fructose",
+    "explanation": "Sucrose is formed from glucose and fructose."
+  },
+  {
+    "type": "mcq",
+    "question": "What is lactose made from?",
+    "options": [
+      "Glucose and galactose",
+      "Two fructose molecules",
+      "Ribose and deoxyribose"
+    ],
+    "answer": 0,
+    "explanation": "Lactose is made from glucose and galactose."
+  },
+  {
+    "type": "fill",
+    "question": "Hydrolysis breaks a disaccharide by adding ______.",
+    "answerText": "water",
+    "explanation": "Hydrolysis uses water to break the glycosidic bond."
+  }
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
