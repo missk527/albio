@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polysaccharides</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALB3. Polysaccharides</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/S4T4KVTSGdA?si=JevC0EZS_ZY_tUy7" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+
+<details open>
+<summary>Introduction | What Polysaccharides Are</summary>
+<ul>
+<li>Polysaccharides are complex carbohydrates made from many monosaccharides linked by glycosidic bonds.</li>
+<li>Common examples include starch, glycogen, and cellulose.</li>
+<li>They have two major roles: storing energy and providing structural support.</li>
+</ul>
+</details>
+<details>
+<summary>Starch | Forms and Monomers</summary>
+<ul>
+<li>Starch is the main glucose-storage polysaccharide in plants.</li>
+<li>It occurs in two forms: amylose and amylopectin.</li>
+<li>Both forms are built from alpha-glucose monomers joined by glycosidic bonds.</li>
+</ul>
+</details>
+<details>
+<summary>Amylose | Structure</summary>
+<ul>
+<li>Amylose is an unbranched chain containing alpha-1,4 glycosidic bonds.</li>
+<li>An alpha-1,4 bond forms between carbon 1 of one glucose and carbon 4 of the next.</li>
+<li>The bond angles cause the chain to coil into a compact helical shape.</li>
+</ul>
+</details>
+<details>
+<summary>Amylopectin | Structure</summary>
+<ul>
+<li>Amylopectin is branched because it contains both alpha-1,4 and alpha-1,6 glycosidic bonds.</li>
+<li>Alpha-1,4 bonds form the main chains, while alpha-1,6 bonds create side branches.</li>
+<li>Its many branch ends allow enzymes to release glucose quickly.</li>
+</ul>
+</details>
+<details>
+<summary>Starch | Adaptations for Storage</summary>
+<ul>
+<li>Starch is insoluble, so it does not affect the water balance of plant cells.</li>
+<li>It is large, so it does not readily diffuse out of cells.</li>
+<li>Coiled amylose is compact, allowing much glucose to be stored in a small space.</li>
+<li>Branched amylopectin provides many accessible ends for rapid hydrolysis and respiration.</li>
+</ul>
+</details>
+<details>
+<summary>Glycogen | Structure and Function</summary>
+<ul>
+<li>Glycogen is the main glucose-storage polysaccharide in animals.</li>
+<li>It is made from alpha-glucose with alpha-1,4 and alpha-1,6 glycosidic bonds.</li>
+<li>Glycogen is insoluble, large, compact, and more highly branched than amylopectin.</li>
+<li>Extra branching provides many ends, enabling rapid glucose release for active animals.</li>
+</ul>
+</details>
+<details>
+<summary>Cellulose | Structure</summary>
+<ul>
+<li>Cellulose is made from beta-glucose monomers joined by beta-1,4 glycosidic bonds.</li>
+<li>Every second beta-glucose monomer is inverted so the hydroxyl groups on carbons 1 and 4 can react.</li>
+<li>This arrangement produces long, straight, unbranched cellulose chains.</li>
+</ul>
+</details>
+<details>
+<summary>Cellulose | Microfibrils and Strength</summary>
+<ul>
+<li>Hydrogen bonds form cross-links between adjacent cellulose chains.</li>
+<li>Many cross-linked chains form a strong bundle called a microfibril.</li>
+<li>Several microfibrils group together to form a macrofibril.</li>
+<li>This organisation gives plant cell walls rigidity and high tensile strength.</li>
+</ul>
+</details>
+<details>
+<summary>Comparison | Starch, Glycogen, and Cellulose</summary>
+<ul>
+<li>Starch and cellulose occur in plants, whereas glycogen occurs in animals.</li>
+<li>Starch and glycogen contain alpha-glucose; cellulose contains beta-glucose.</li>
+<li>Amylose and cellulose are unbranched, while amylopectin and glycogen are branched.</li>
+<li>Amylose has alpha-1,4 bonds; amylopectin and glycogen have alpha-1,4 and alpha-1,6 bonds; cellulose has beta-1,4 bonds.</li>
+<li>Starch and glycogen store energy, while cellulose provides structural support.</li>
+</ul>
+</details>
+
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+  {
+    "type": "mcq",
+    "question": "What are polysaccharides?",
+    "options": [
+      "Complex carbohydrates made of many monosaccharides",
+      "Proteins made of amino acids",
+      "Lipids made of fatty acids"
+    ],
+    "answer": 0,
+    "explanation": "Polysaccharides are long carbohydrate molecules built from many monosaccharides."
+  },
+  {
+    "type": "fill",
+    "question": "Monosaccharides in a polysaccharide are linked by ______ bonds.",
+    "answerText": "glycosidic",
+    "explanation": "Glycosidic bonds join monosaccharide units."
+  },
+  {
+    "type": "mcq",
+    "question": "Which list contains only polysaccharides?",
+    "options": [
+      "Starch, glycogen, and cellulose",
+      "Glucose, fructose, and galactose",
+      "DNA, RNA, and ATP"
+    ],
+    "answer": 0,
+    "explanation": "Starch, glycogen, and cellulose are common polysaccharides."
+  },
+  {
+    "type": "fill",
+    "question": "Polysaccharides can store energy and provide structural ______.",
+    "answerText": "support",
+    "explanation": "Their major roles include energy storage and structural support."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the main storage polysaccharide in plants?",
+    "options": [
+      "Starch",
+      "Glycogen",
+      "Cellulose"
+    ],
+    "answer": 0,
+    "explanation": "Plants store glucose mainly as starch."
+  },
+  {
+    "type": "fill",
+    "question": "The two forms of starch are amylose and ______.",
+    "answerText": "amylopectin",
+    "explanation": "Starch consists of amylose and amylopectin."
+  },
+  {
+    "type": "mcq",
+    "question": "Which monomer forms both amylose and amylopectin?",
+    "options": [
+      "Alpha-glucose",
+      "Beta-glucose",
+      "Fructose"
+    ],
+    "answer": 0,
+    "explanation": "Both forms of starch are polymers of alpha-glucose."
+  },
+  {
+    "type": "fill",
+    "question": "Amylose has an ______ structure rather than a branched one.",
+    "answerText": "unbranched",
+    "explanation": "Amylose is a continuous, unbranched chain."
+  },
+  {
+    "type": "mcq",
+    "question": "Which glycosidic bond occurs in amylose?",
+    "options": [
+      "Alpha-1,4",
+      "Alpha-1,6 only",
+      "Beta-1,4"
+    ],
+    "answer": 0,
+    "explanation": "Amylose contains alpha-1,4 glycosidic bonds."
+  },
+  {
+    "type": "fill",
+    "question": "An alpha-1,4 bond joins carbon 1 to carbon ______.",
+    "answerText": "4",
+    "explanation": "The bond forms between carbon 1 of one glucose and carbon 4 of another."
+  },
+  {
+    "type": "mcq",
+    "question": "Why does amylose form a helix?",
+    "options": [
+      "The angles of its alpha-1,4 bonds make the chain coil",
+      "Hydrogen bonds create side branches",
+      "Its beta-glucose units alternate"
+    ],
+    "answer": 0,
+    "explanation": "The geometry of alpha-1,4 bonds produces a coiled helix."
+  },
+  {
+    "type": "fill",
+    "question": "The helical shape makes amylose compact, so much ______ can be stored in a small space.",
+    "answerText": "glucose",
+    "explanation": "Coiling makes amylose a compact glucose store."
+  },
+  {
+    "type": "mcq",
+    "question": "Why is amylopectin branched?",
+    "options": [
+      "It has alpha-1,4 and alpha-1,6 bonds",
+      "It has only beta-1,4 bonds",
+      "It contains hydrogen-bonded microfibrils"
+    ],
+    "answer": 0,
+    "explanation": "Alpha-1,6 bonds create branches along alpha-1,4 chains."
+  },
+  {
+    "type": "fill",
+    "question": "In amylopectin, alpha-1,6 bonds create side ______.",
+    "answerText": "branches",
+    "explanation": "Alpha-1,6 linkages form branch points."
+  },
+  {
+    "type": "mcq",
+    "question": "What is an advantage of amylopectin's branches?",
+    "options": [
+      "They provide many ends for rapid enzyme action",
+      "They make the molecule soluble",
+      "They convert alpha-glucose into beta-glucose"
+    ],
+    "answer": 0,
+    "explanation": "Many ends allow enzymes to hydrolyse bonds and release glucose quickly."
+  },
+  {
+    "type": "fill",
+    "question": "Enzymes release glucose from starch by ______ its glycosidic bonds.",
+    "answerText": "hydrolysing",
+    "explanation": "Hydrolysis breaks glycosidic bonds to release glucose."
+  },
+  {
+    "type": "mcq",
+    "question": "Why does insoluble starch not disrupt cell water balance?",
+    "options": [
+      "It has little osmotic effect",
+      "It freely diffuses through membranes",
+      "It is converted directly into cellulose"
+    ],
+    "answer": 0,
+    "explanation": "An insoluble storage molecule does not significantly lower water potential."
+  },
+  {
+    "type": "fill",
+    "question": "Starch is too ______ to diffuse easily out of plant cells.",
+    "answerText": "large",
+    "explanation": "Its large molecular size helps retain it inside cells."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the main storage polysaccharide in animals?",
+    "options": [
+      "Glycogen",
+      "Amylose",
+      "Cellulose"
+    ],
+    "answer": 0,
+    "explanation": "Animals store glucose mainly as glycogen."
+  },
+  {
+    "type": "fill",
+    "question": "Glycogen is made from ______-glucose monomers.",
+    "answerText": "alpha",
+    "explanation": "Like starch, glycogen is a polymer of alpha-glucose."
+  },
+  {
+    "type": "mcq",
+    "question": "Which bonds are present in glycogen?",
+    "options": [
+      "Alpha-1,4 and alpha-1,6",
+      "Beta-1,4 only",
+      "Alpha-1,6 only"
+    ],
+    "answer": 0,
+    "explanation": "Glycogen contains alpha-1,4 chains and alpha-1,6 branch points."
+  },
+  {
+    "type": "fill",
+    "question": "Glycogen is even more highly ______ than amylopectin.",
+    "answerText": "branched",
+    "explanation": "Glycogen has more frequent branches than amylopectin."
+  },
+  {
+    "type": "mcq",
+    "question": "Why is extensive branching useful in glycogen?",
+    "options": [
+      "It enables rapid glucose release",
+      "It forms plant cell walls",
+      "It makes glycogen a straight fibre"
+    ],
+    "answer": 0,
+    "explanation": "More ends let enzymes release glucose rapidly for respiration."
+  },
+  {
+    "type": "fill",
+    "question": "Animals need rapid access to glucose because they are generally more ______ than plants.",
+    "answerText": "active",
+    "explanation": "Greater activity creates a need for faster energy release."
+  },
+  {
+    "type": "mcq",
+    "question": "Which polysaccharide is the main structural material in plant cell walls?",
+    "options": [
+      "Cellulose",
+      "Glycogen",
+      "Amylopectin"
+    ],
+    "answer": 0,
+    "explanation": "Cellulose strengthens plant cell walls."
+  },
+  {
+    "type": "fill",
+    "question": "Cellulose is made from ______-glucose monomers.",
+    "answerText": "beta",
+    "explanation": "Cellulose is a polymer of beta-glucose."
+  },
+  {
+    "type": "mcq",
+    "question": "What type of glycosidic bond joins beta-glucose units in cellulose?",
+    "options": [
+      "Beta-1,4",
+      "Alpha-1,4",
+      "Alpha-1,6"
+    ],
+    "answer": 0,
+    "explanation": "Cellulose chains contain beta-1,4 glycosidic bonds."
+  },
+  {
+    "type": "fill",
+    "question": "Every second beta-glucose monomer in cellulose is ______.",
+    "answerText": "inverted",
+    "explanation": "Alternating monomers are rotated 180 degrees."
+  },
+  {
+    "type": "mcq",
+    "question": "Why must alternate beta-glucose molecules be inverted?",
+    "options": [
+      "To bring the carbon 1 and carbon 4 hydroxyl groups close enough to react",
+      "To produce alpha-1,6 branches",
+      "To make cellulose soluble"
+    ],
+    "answer": 0,
+    "explanation": "Inversion aligns the hydroxyl groups needed to form beta-1,4 bonds."
+  },
+  {
+    "type": "fill",
+    "question": "Cellulose chains are long, straight, and ______.",
+    "answerText": "unbranched",
+    "explanation": "Beta-1,4 bonding produces straight, unbranched chains."
+  },
+  {
+    "type": "mcq",
+    "question": "What cross-links adjacent cellulose chains?",
+    "options": [
+      "Hydrogen bonds",
+      "Peptide bonds",
+      "Ionic bonds"
+    ],
+    "answer": 0,
+    "explanation": "Numerous hydrogen bonds form between neighbouring cellulose chains."
+  },
+  {
+    "type": "fill",
+    "question": "A strong bundle of cross-linked cellulose chains is called a ______.",
+    "answerText": "microfibril",
+    "explanation": "Hydrogen-bonded cellulose chains form a microfibril."
+  },
+  {
+    "type": "mcq",
+    "question": "What forms when several cellulose microfibrils group together?",
+    "options": [
+      "A macrofibril",
+      "A glycogen granule",
+      "An amylose helix"
+    ],
+    "answer": 0,
+    "explanation": "Microfibrils assemble into larger macrofibrils."
+  },
+  {
+    "type": "fill",
+    "question": "Cellulose gives plant cell walls rigidity and high ______ strength.",
+    "answerText": "tensile",
+    "explanation": "Cross-linked chains resist pulling forces, giving tensile strength."
+  },
+  {
+    "type": "mcq",
+    "question": "Which pair is found in plants?",
+    "options": [
+      "Starch and cellulose",
+      "Glycogen and cellulose",
+      "Glycogen and starch only in animals"
+    ],
+    "answer": 0,
+    "explanation": "Plants contain starch for storage and cellulose for structure."
+  },
+  {
+    "type": "fill",
+    "question": "Starch and glycogen contain alpha-glucose, whereas cellulose contains ______-glucose.",
+    "answerText": "beta",
+    "explanation": "Their glucose isomers distinguish the storage and structural polysaccharides."
+  },
+  {
+    "type": "mcq",
+    "question": "Which pair is unbranched?",
+    "options": [
+      "Amylose and cellulose",
+      "Amylopectin and glycogen",
+      "Amylose and glycogen"
+    ],
+    "answer": 0,
+    "explanation": "Amylose and cellulose are unbranched; amylopectin and glycogen are branched."
+  },
+  {
+    "type": "fill",
+    "question": "Amylopectin and glycogen contain both 1,4 and 1,______ glycosidic linkages.",
+    "answerText": "6",
+    "explanation": "Their 1,6 linkages form branch points."
+  },
+  {
+    "type": "mcq",
+    "question": "Which polysaccharide is most highly branched?",
+    "options": [
+      "Glycogen",
+      "Amylose",
+      "Cellulose"
+    ],
+    "answer": 0,
+    "explanation": "Glycogen is more highly branched than amylopectin."
+  },
+  {
+    "type": "fill",
+    "question": "The principal function of cellulose is structural support in plant cell ______.",
+    "answerText": "walls",
+    "explanation": "Cellulose is the main strengthening material in plant cell walls."
+  }
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
