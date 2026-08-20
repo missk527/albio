@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lipids</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALB5. Lipids</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/xP9SgwDkJnM?si=f91L19cHyCZbHR4c" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+
+<details open>
+<summary>Structure of Lipids</summary>
+<ul>
+<li>Lipids are an important group of biological molecules containing carbon, hydrogen, and oxygen.</li>
+<li>They contain much less oxygen than carbohydrates.</li>
+<li>Most lipids consist of fatty acids combined with an alcohol.</li>
+<li>A triglyceride contains three fatty acid tails joined to glycerol.</li>
+<li>Lipids are not made from long chains of repeating monomers, so they are not true polymers.</li>
+</ul>
+</details>
+<details>
+<summary>Fats and Oils</summary>
+<ul>
+<li>Fats and oils are types of lipid whose properties depend on their fatty acids.</li>
+<li>Fats are solid at room temperature, whereas oils are liquid at room temperature.</li>
+</ul>
+</details>
+<details>
+<summary>Energy Storage and Cell Membranes</summary>
+<ul>
+<li>Lipids are major energy-storage molecules because their oxidation releases a large amount of energy.</li>
+<li>Phospholipids are essential structural components of cell membranes.</li>
+</ul>
+</details>
+<details>
+<summary>Waterproofing, Insulation, and Protection</summary>
+<ul>
+<li>Lipids are insoluble in water, so they can form water-resistant barriers.</li>
+<li>Fat provides thermal insulation and helps organisms retain heat.</li>
+<li>The lipid layer around nerve cells acts as an electrical insulator and supports nerve impulse transmission.</li>
+<li>Fat around organs cushions them and protects them from physical damage.</li>
+</ul>
+</details>
+<details>
+<summary>Basic Structure of a Fatty Acid</summary>
+<ul>
+<li>A fatty acid contains a carboxyl group attached to an R group.</li>
+<li>The R group is a hydrocarbon chain that can vary in length and structure.</li>
+</ul>
+</details>
+<details>
+<summary>Saturated Fatty Acids</summary>
+<ul>
+<li>Saturated fatty acids are fully saturated with hydrogen and contain no carbon–carbon double bonds.</li>
+<li>Their straight hydrocarbon chains can pack closely together.</li>
+<li>Strong packing gives lipids rich in saturated fatty acids higher melting points, so they are often solid at room temperature.</li>
+</ul>
+</details>
+<details>
+<summary>Unsaturated Fatty Acids</summary>
+<ul>
+<li>Unsaturated fatty acids contain at least one carbon–carbon double bond.</li>
+<li>A monounsaturated fatty acid has one carbon–carbon double bond; a polyunsaturated fatty acid has two or more.</li>
+<li>Double bonds create kinks in the hydrocarbon chains, preventing close packing.</li>
+<li>Lipids rich in unsaturated fatty acids have lower melting points and are often liquid at room temperature.</li>
+</ul>
+</details>
+<details>
+<summary>The Emulsion Test for Lipids</summary>
+<ul>
+<li>Place 2 cm<sup>3</sup> of the food sample in a test tube and add 2 cm<sup>3</sup> of ethanol.</li>
+<li>Shake the mixture so that any lipids dissolve in the ethanol.</li>
+<li>Add 2 cm<sup>3</sup> of distilled water.</li>
+<li>A milky-white emulsion is a positive result for lipids; a clear solution is a negative result.</li>
+<li>The emulsion forms because lipids are insoluble in water and separate into tiny droplets that scatter light.</li>
+</ul>
+</details>
+
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+  {
+    "type": "mcq",
+    "question": "Which elements are found in all lipids?",
+    "options": [
+      "Carbon, hydrogen, and oxygen",
+      "Carbon, nitrogen, and sulfur",
+      "Hydrogen, oxygen, and phosphorus"
+    ],
+    "answer": 0,
+    "explanation": "All lipids contain carbon, hydrogen, and oxygen."
+  },
+  {
+    "type": "fill",
+    "question": "Lipids contain much less ______ than carbohydrates.",
+    "answerText": "oxygen",
+    "explanation": "Compared with carbohydrates, lipids contain much less oxygen."
+  },
+  {
+    "type": "mcq",
+    "question": "Most lipids are made from fatty acids combined with what?",
+    "options": [
+      "An alcohol",
+      "An amino acid",
+      "A monosaccharide"
+    ],
+    "answer": 0,
+    "explanation": "Most lipids contain fatty acids joined to an alcohol."
+  },
+  {
+    "type": "fill",
+    "question": "The alcohol found in a triglyceride is called ______.",
+    "answerText": "glycerol",
+    "explanation": "A triglyceride contains glycerol joined to three fatty acids."
+  },
+  {
+    "type": "mcq",
+    "question": "How many fatty acid tails does a triglyceride contain?",
+    "options": [
+      "Three",
+      "Two",
+      "Four"
+    ],
+    "answer": 0,
+    "explanation": "A triglyceride has three fatty acid tails."
+  },
+  {
+    "type": "fill",
+    "question": "Lipids are not true ______ because they are not long chains of repeating monomers.",
+    "answerText": "polymers",
+    "explanation": "Lipids are not technically polymers."
+  },
+  {
+    "type": "mcq",
+    "question": "Which statement correctly distinguishes fats from oils?",
+    "options": [
+      "Fats are solid and oils are liquid at room temperature",
+      "Fats are liquid and oils are solid at room temperature",
+      "Both are always solid at room temperature"
+    ],
+    "answer": 0,
+    "explanation": "Fats are normally solid, while oils are normally liquid, at room temperature."
+  },
+  {
+    "type": "fill",
+    "question": "The properties of fats and oils depend on the ______ acids they contain.",
+    "answerText": "fatty",
+    "explanation": "Their fatty acid composition affects their properties."
+  },
+  {
+    "type": "mcq",
+    "question": "Why are lipids useful as energy stores?",
+    "options": [
+      "Their oxidation releases a large amount of energy",
+      "They dissolve rapidly in water",
+      "They contain repeating sugar monomers"
+    ],
+    "answer": 0,
+    "explanation": "Oxidation of lipids releases a large amount of usable energy."
+  },
+  {
+    "type": "fill",
+    "question": "Lipids release energy when they are ______.",
+    "answerText": "oxidized",
+    "explanation": "Energy is released when lipids are oxidized."
+  },
+  {
+    "type": "mcq",
+    "question": "Which lipid forms the basic structure of cell membranes?",
+    "options": [
+      "Phospholipid",
+      "Triglyceride only",
+      "Wax only"
+    ],
+    "answer": 0,
+    "explanation": "Phospholipids are major structural components of cell membranes."
+  },
+  {
+    "type": "fill",
+    "question": "Phospholipids are important components of cell ______.",
+    "answerText": "membranes",
+    "explanation": "Cell membranes are based on phospholipids."
+  },
+  {
+    "type": "mcq",
+    "question": "Why can lipids provide waterproofing?",
+    "options": [
+      "They are insoluble in water",
+      "They absorb unlimited water",
+      "They react with water immediately"
+    ],
+    "answer": 0,
+    "explanation": "Water-insoluble lipids can form water-resistant barriers."
+  },
+  {
+    "type": "fill",
+    "question": "Lipids can form water-resistant ______.",
+    "answerText": "barriers",
+    "explanation": "Their insolubility allows them to form barriers against water."
+  },
+  {
+    "type": "mcq",
+    "question": "How does stored fat help an organism retain heat?",
+    "options": [
+      "It provides thermal insulation",
+      "It increases evaporation",
+      "It dissolves in body fluids"
+    ],
+    "answer": 0,
+    "explanation": "Fat reduces heat loss by providing thermal insulation."
+  },
+  {
+    "type": "fill",
+    "question": "The lipid layer around nerve cells can act as an electrical ______.",
+    "answerText": "insulator",
+    "explanation": "This lipid layer electrically insulates nerve cells."
+  },
+  {
+    "type": "mcq",
+    "question": "What function does fat around organs perform?",
+    "options": [
+      "It cushions and protects them",
+      "It digests the organs",
+      "It makes them water-soluble"
+    ],
+    "answer": 0,
+    "explanation": "Fat cushions organs and helps protect them from damage."
+  },
+  {
+    "type": "fill",
+    "question": "A fatty acid has a carboxyl group attached to an ______ group.",
+    "answerText": "r group",
+    "explanation": "The variable hydrocarbon portion is called the R group."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the R group of a fatty acid?",
+    "options": [
+      "A hydrocarbon chain",
+      "A phosphate group",
+      "An amino group"
+    ],
+    "answer": 0,
+    "explanation": "The R group is a hydrocarbon chain."
+  },
+  {
+    "type": "fill",
+    "question": "The hydrocarbon chain of a fatty acid can vary in length and ______.",
+    "answerText": "structure",
+    "explanation": "Different fatty acids have hydrocarbon chains of different lengths and structures."
+  },
+  {
+    "type": "mcq",
+    "question": "What does fully saturated with hydrogen mean?",
+    "options": [
+      "Each carbon has the maximum possible number of hydrogen bonds",
+      "The chain contains the maximum possible oxygen",
+      "The molecule is dissolved in water"
+    ],
+    "answer": 0,
+    "explanation": "In a saturated chain, carbon atoms bond to the maximum possible number of hydrogens."
+  },
+  {
+    "type": "fill",
+    "question": "Saturated fatty acids contain no carbon–carbon ______ bonds.",
+    "answerText": "double",
+    "explanation": "Saturated fatty acids have no carbon–carbon double bonds."
+  },
+  {
+    "type": "mcq",
+    "question": "What shape do saturated fatty acid chains generally have?",
+    "options": [
+      "Straight",
+      "Strongly branched",
+      "Circular"
+    ],
+    "answer": 0,
+    "explanation": "Without double-bond kinks, saturated chains are straight."
+  },
+  {
+    "type": "fill",
+    "question": "Straight saturated chains can pack ______ together.",
+    "answerText": "closely",
+    "explanation": "Straight chains fit closely beside one another."
+  },
+  {
+    "type": "mcq",
+    "question": "Why do lipids rich in saturated fatty acids have higher melting points?",
+    "options": [
+      "Their closely packed chains are harder to separate",
+      "Their chains contain more water",
+      "Their double bonds make large kinks"
+    ],
+    "answer": 0,
+    "explanation": "Close packing makes the chains harder to pull apart."
+  },
+  {
+    "type": "fill",
+    "question": "Lipids rich in saturated fatty acids are usually ______ at room temperature.",
+    "answerText": "solid",
+    "explanation": "Their higher melting points often make them solid at room temperature."
+  },
+  {
+    "type": "mcq",
+    "question": "How many carbon–carbon double bonds must an unsaturated fatty acid have?",
+    "options": [
+      "At least one",
+      "None",
+      "Exactly three"
+    ],
+    "answer": 0,
+    "explanation": "An unsaturated fatty acid contains one or more carbon–carbon double bonds."
+  },
+  {
+    "type": "fill",
+    "question": "A fatty acid with one carbon–carbon double bond is ______.",
+    "answerText": "monounsaturated",
+    "explanation": "Mono- means that there is one double bond."
+  },
+  {
+    "type": "mcq",
+    "question": "What is a polyunsaturated fatty acid?",
+    "options": [
+      "A fatty acid with two or more carbon–carbon double bonds",
+      "A fatty acid with no double bonds",
+      "A fatty acid with exactly one carbon atom"
+    ],
+    "answer": 0,
+    "explanation": "Polyunsaturated fatty acids have two or more carbon–carbon double bonds."
+  },
+  {
+    "type": "fill",
+    "question": "Carbon–carbon double bonds cause unsaturated chains to ______.",
+    "answerText": "kink",
+    "explanation": "The bond angle introduces a kink in the chain."
+  },
+  {
+    "type": "mcq",
+    "question": "Why can unsaturated fatty acid chains not pack closely?",
+    "options": [
+      "Double bonds create kinks",
+      "They contain no carbon",
+      "They are polymers"
+    ],
+    "answer": 0,
+    "explanation": "Kinks prevent the chains from lying closely together."
+  },
+  {
+    "type": "fill",
+    "question": "Lipids rich in unsaturated fatty acids have ______ melting points than saturated lipids.",
+    "answerText": "lower",
+    "explanation": "Poorer packing makes the chains easier to separate."
+  },
+  {
+    "type": "mcq",
+    "question": "At room temperature, lipids rich in unsaturated fatty acids are often what?",
+    "options": [
+      "Liquids",
+      "Solids",
+      "Gases"
+    ],
+    "answer": 0,
+    "explanation": "Their lower melting points often make them liquids."
+  },
+  {
+    "type": "fill",
+    "question": "The test used to detect lipids in food is the ______ test.",
+    "answerText": "emulsion",
+    "explanation": "Lipids are detected using the emulsion test."
+  },
+  {
+    "type": "mcq",
+    "question": "How much food sample is placed in the test tube in the described procedure?",
+    "options": [
+      "2 cm³",
+      "20 cm³",
+      "0.2 cm³"
+    ],
+    "answer": 0,
+    "explanation": "The procedure begins with 2 cm³ of food sample."
+  },
+  {
+    "type": "fill",
+    "question": "Add 2 cm³ of ______ to dissolve any lipids in the sample.",
+    "answerText": "ethanol",
+    "explanation": "Lipids are soluble in ethanol."
+  },
+  {
+    "type": "mcq",
+    "question": "What should be done after adding ethanol to the food sample?",
+    "options": [
+      "Shake the mixture",
+      "Freeze the mixture",
+      "Boil it to dryness"
+    ],
+    "answer": 0,
+    "explanation": "Shaking helps any lipid dissolve in the ethanol."
+  },
+  {
+    "type": "fill",
+    "question": "After shaking, add 2 cm³ of distilled ______.",
+    "answerText": "water",
+    "explanation": "Distilled water is added after the ethanol extraction."
+  },
+  {
+    "type": "mcq",
+    "question": "Which observation is a positive result for lipids?",
+    "options": [
+      "A milky-white emulsion",
+      "A clear solution",
+      "A blue-black colour"
+    ],
+    "answer": 0,
+    "explanation": "A milky-white emulsion shows that lipids are present."
+  },
+  {
+    "type": "fill",
+    "question": "Tiny lipid droplets scatter ______ and create the milky appearance.",
+    "answerText": "light",
+    "explanation": "Suspended droplets scatter light, making the emulsion appear milky."
+  }
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
