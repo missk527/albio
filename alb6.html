@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lipids</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALB6. Lipids</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/ZOSy3jEaILQ?si=zDIHRuic5pe9i4NG" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+
+<details open>
+<summary>Introduction | Three Important Lipids</summary>
+<ul>
+<li>Lipids include triglycerides, phospholipids, and cholesterol.</li>
+<li>Their structures determine their roles in energy storage, cell membranes, and biological synthesis.</li>
+</ul>
+</details>
+<details>
+<summary>Triglycerides | Structure</summary>
+<ul>
+<li>A triglyceride consists of one glycerol backbone joined to three fatty acid tails.</li>
+<li>Each fatty acid contains a hydrocarbon chain made mainly of carbon and hydrogen.</li>
+<li>Saturated fatty acids contain only single carbon-carbon bonds; unsaturated fatty acids contain one or more carbon-carbon double bonds.</li>
+</ul>
+</details>
+<details>
+<summary>Triglycerides | Energy Storage</summary>
+<ul>
+<li>Triglycerides store energy in animals, plants, and some bacteria.</li>
+<li>Their long hydrocarbon chains contain many carbon-hydrogen bonds that can release energy when broken.</li>
+<li>Their low mass-to-energy ratio allows a large amount of energy to be stored in a small space.</li>
+<li>Because triglycerides are large, non-polar, and insoluble in water, they do not affect the water balance of cells.</li>
+</ul>
+</details>
+<details>
+<summary>Triglycerides | Synthesis by Condensation</summary>
+<ul>
+<li>A triglyceride is synthesised through condensation reactions between glycerol and three fatty acids.</li>
+<li>The three hydroxyl groups of glycerol react with the carboxyl groups of the fatty acids.</li>
+<li>Three ester bonds form, producing one triglyceride and releasing three water molecules.</li>
+</ul>
+</details>
+<details>
+<summary>Triglycerides | Breakdown by Hydrolysis</summary>
+<ul>
+<li>Hydrolysis is the reverse of condensation.</li>
+<li>Three water molecules are added to break the three ester bonds in a triglyceride.</li>
+<li>The products are one glycerol molecule and three fatty acids.</li>
+</ul>
+</details>
+<details>
+<summary>Phospholipids | Structure and Polarity</summary>
+<ul>
+<li>A phospholipid has a glycerol backbone, two fatty acid tails, and one phosphate group.</li>
+<li>The glycerol-phosphate head is polar and hydrophilic, so it is attracted to water.</li>
+<li>The fatty acid tails are non-polar and hydrophobic, so they repel water.</li>
+<li>Having both hydrophilic and hydrophobic regions makes a phospholipid amphipathic.</li>
+</ul>
+</details>
+<details>
+<summary>Phospholipids | Bilayers and Cell Membranes</summary>
+<ul>
+<li>In an aqueous environment, phospholipids form a bilayer: the heads face the water and the tails face inward.</li>
+<li>The bilayer separates the cytoplasm from the extracellular fluid.</li>
+<li>Its hydrophobic interior restricts the passage of many water-soluble substances.</li>
+<li>Therefore, the phospholipid bilayer helps regulate movement into and out of cells.</li>
+</ul>
+</details>
+<details>
+<summary>Cholesterol | Structure</summary>
+<ul>
+<li>Cholesterol is a sterol with four fused carbon rings and a branched hydrocarbon chain.</li>
+<li>Most of the molecule is non-polar and hydrophobic.</li>
+<li>Its hydroxyl group is polar and hydrophilic, so cholesterol has both hydrophilic and hydrophobic regions.</li>
+</ul>
+</details>
+<details>
+<summary>Cholesterol | Biological Functions</summary>
+<ul>
+<li>Cholesterol is used to make vitamin D, steroid hormones, and bile.</li>
+<li>It also controls the stability and fluidity of animal cell membranes.</li>
+<li>Its hydrophilic end aligns with phospholipid heads, while its hydrophobic region aligns with fatty acid tails.</li>
+</ul>
+</details>
+<details>
+<summary>Cholesterol | Temperature and Membrane Fluidity</summary>
+<ul>
+<li>At high temperatures, cholesterol restrains phospholipid movement, reduces excessive fluidity, and stabilises the membrane.</li>
+<li>At low temperatures, cholesterol prevents phospholipids from packing too closely, helping the membrane remain fluid.</li>
+<li>Cholesterol therefore acts as a fluidity buffer across temperature changes.</li>
+</ul>
+</details>
+
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+  {
+    "type": "mcq",
+    "question": "Which three types of lipids are covered in the video?",
+    "options": [
+      "Triglycerides, phospholipids, and cholesterol",
+      "Starch, glycogen, and cellulose",
+      "Proteins, enzymes, and antibodies"
+    ],
+    "answer": 0,
+    "explanation": "The video focuses on triglycerides, phospholipids, and cholesterol."
+  },
+  {
+    "type": "fill",
+    "question": "A triglyceride contains one glycerol backbone and three ______ acid tails.",
+    "answerText": "fatty",
+    "explanation": "Three fatty acids are attached to glycerol."
+  },
+  {
+    "type": "mcq",
+    "question": "What forms the backbone of a triglyceride?",
+    "options": [
+      "Glycerol",
+      "Glucose",
+      "A phosphate group"
+    ],
+    "answer": 0,
+    "explanation": "A triglyceride has a glycerol backbone."
+  },
+  {
+    "type": "fill",
+    "question": "Fatty acid tails contain long ______ chains made of carbon and hydrogen.",
+    "answerText": "hydrocarbon",
+    "explanation": "The tails are hydrocarbon chains."
+  },
+  {
+    "type": "mcq",
+    "question": "Which statement describes a saturated fatty acid?",
+    "options": [
+      "It has only single carbon-carbon bonds",
+      "It has one or more carbon-carbon double bonds",
+      "It contains no hydrogen"
+    ],
+    "answer": 0,
+    "explanation": "Saturated fatty acids have only single carbon-carbon bonds."
+  },
+  {
+    "type": "fill",
+    "question": "An unsaturated fatty acid has one or more carbon-carbon ______ bonds.",
+    "answerText": "double",
+    "explanation": "Unsaturation is caused by carbon-carbon double bonds."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the main function of triglycerides?",
+    "options": [
+      "Energy storage",
+      "Genetic information storage",
+      "Catalysing reactions"
+    ],
+    "answer": 0,
+    "explanation": "Triglycerides are important energy-storage molecules."
+  },
+  {
+    "type": "fill",
+    "question": "Triglycerides store energy in animals, plants, and some ______.",
+    "answerText": "bacteria",
+    "explanation": "Some bacteria also use triglycerides for energy storage."
+  },
+  {
+    "type": "mcq",
+    "question": "Why can triglycerides release a large amount of energy?",
+    "options": [
+      "Their hydrocarbon chains contain many carbon-hydrogen bonds",
+      "They contain many peptide bonds",
+      "They dissolve rapidly in water"
+    ],
+    "answer": 0,
+    "explanation": "Many carbon-hydrogen bonds can be broken to release energy."
+  },
+  {
+    "type": "fill",
+    "question": "A low mass-to-energy ratio allows much energy to be stored in a small ______.",
+    "answerText": "space",
+    "explanation": "Triglycerides are compact energy stores."
+  },
+  {
+    "type": "mcq",
+    "question": "Why do triglycerides not significantly affect cell water balance?",
+    "options": [
+      "They are large and insoluble in water",
+      "They are highly charged",
+      "They readily dissolve into ions"
+    ],
+    "answer": 0,
+    "explanation": "Their non-polar, insoluble nature gives them little osmotic effect."
+  },
+  {
+    "type": "fill",
+    "question": "Triglycerides are insoluble in water because they are ______-polar.",
+    "answerText": "non",
+    "explanation": "Triglycerides are non-polar molecules."
+  },
+  {
+    "type": "mcq",
+    "question": "Which reaction synthesises a triglyceride?",
+    "options": [
+      "Condensation",
+      "Hydrolysis",
+      "Neutralisation"
+    ],
+    "answer": 0,
+    "explanation": "Condensation reactions join glycerol to fatty acids."
+  },
+  {
+    "type": "fill",
+    "question": "Glycerol has three ______ groups that take part in triglyceride synthesis.",
+    "answerText": "hydroxyl",
+    "explanation": "The three hydroxyl groups of glycerol react during synthesis."
+  },
+  {
+    "type": "mcq",
+    "question": "How many fatty acids react with one glycerol to make a triglyceride?",
+    "options": [
+      "Three",
+      "Two",
+      "Four"
+    ],
+    "answer": 0,
+    "explanation": "One glycerol joins to three fatty acids."
+  },
+  {
+    "type": "fill",
+    "question": "The bonds formed between glycerol and fatty acids are called ______ bonds.",
+    "answerText": "ester",
+    "explanation": "Three ester bonds form in a triglyceride."
+  },
+  {
+    "type": "mcq",
+    "question": "How many water molecules are released when one triglyceride forms?",
+    "options": [
+      "Three",
+      "One",
+      "Six"
+    ],
+    "answer": 0,
+    "explanation": "Each of the three ester bonds forms by condensation, releasing one water molecule."
+  },
+  {
+    "type": "fill",
+    "question": "Triglycerides are broken down by ______ reactions.",
+    "answerText": "hydrolysis",
+    "explanation": "Hydrolysis breaks the ester bonds."
+  },
+  {
+    "type": "mcq",
+    "question": "What is added during complete hydrolysis of one triglyceride?",
+    "options": [
+      "Three water molecules",
+      "Three oxygen molecules",
+      "One glucose molecule"
+    ],
+    "answer": 0,
+    "explanation": "Three water molecules break the three ester bonds."
+  },
+  {
+    "type": "fill",
+    "question": "Complete triglyceride hydrolysis produces glycerol and three ______ acids.",
+    "answerText": "fatty",
+    "explanation": "The ester bonds are broken to release glycerol and fatty acids."
+  },
+  {
+    "type": "mcq",
+    "question": "How does a phospholipid differ from a triglyceride?",
+    "options": [
+      "One fatty acid is replaced by a phosphate group",
+      "It has no glycerol",
+      "It has four fatty acid tails"
+    ],
+    "answer": 0,
+    "explanation": "A phospholipid has two fatty acids and a phosphate group."
+  },
+  {
+    "type": "fill",
+    "question": "A phospholipid contains ______ fatty acid tails.",
+    "answerText": "two",
+    "explanation": "Phospholipids have two fatty acid tails."
+  },
+  {
+    "type": "mcq",
+    "question": "Which region of a phospholipid is hydrophilic?",
+    "options": [
+      "The glycerol-phosphate head",
+      "The fatty acid tails",
+      "The hydrocarbon ends only"
+    ],
+    "answer": 0,
+    "explanation": "The polar head is attracted to water."
+  },
+  {
+    "type": "fill",
+    "question": "The fatty acid tails of a phospholipid are ______phobic.",
+    "answerText": "hydro",
+    "explanation": "The non-polar tails are hydrophobic."
+  },
+  {
+    "type": "mcq",
+    "question": "Why is the phosphate group attracted to water?",
+    "options": [
+      "It is polar",
+      "It is a hydrocarbon",
+      "It is completely non-polar"
+    ],
+    "answer": 0,
+    "explanation": "The polar phosphate group interacts with water."
+  },
+  {
+    "type": "fill",
+    "question": "In water, phospholipids arrange themselves into a ______.",
+    "answerText": "bilayer",
+    "explanation": "They form a phospholipid bilayer."
+  },
+  {
+    "type": "mcq",
+    "question": "Where do phospholipid heads point in a bilayer?",
+    "options": [
+      "Toward the surrounding water",
+      "Toward the centre away from water",
+      "Only toward cholesterol"
+    ],
+    "answer": 0,
+    "explanation": "Hydrophilic heads face aqueous environments."
+  },
+  {
+    "type": "fill",
+    "question": "In a bilayer, the hydrophobic tails point ______, away from water.",
+    "answerText": "inward",
+    "explanation": "The tails face each other inside the bilayer."
+  },
+  {
+    "type": "mcq",
+    "question": "What is a major function of the phospholipid bilayer?",
+    "options": [
+      "Regulating which substances enter or leave the cell",
+      "Producing DNA",
+      "Storing hereditary information"
+    ],
+    "answer": 0,
+    "explanation": "The bilayer forms a selective barrier."
+  },
+  {
+    "type": "fill",
+    "question": "The bilayer separates the cytoplasm from the ______ space.",
+    "answerText": "extracellular",
+    "explanation": "It separates the cell interior from extracellular fluid."
+  },
+  {
+    "type": "mcq",
+    "question": "Which substances are especially restricted by the bilayer's hydrophobic interior?",
+    "options": [
+      "Many water-soluble substances",
+      "All lipid-soluble substances",
+      "Only oxygen molecules"
+    ],
+    "answer": 0,
+    "explanation": "The hydrophobic core impedes many water-soluble substances."
+  },
+  {
+    "type": "fill",
+    "question": "Cholesterol belongs to a lipid group called ______.",
+    "answerText": "sterols",
+    "explanation": "Cholesterol is a sterol."
+  },
+  {
+    "type": "mcq",
+    "question": "Which feature is characteristic of cholesterol?",
+    "options": [
+      "Four fused carbon rings",
+      "Three fatty acid tails",
+      "A long chain of glucose monomers"
+    ],
+    "answer": 0,
+    "explanation": "Cholesterol has a distinctive four-ring structure."
+  },
+  {
+    "type": "fill",
+    "question": "The branched chain and ring region of cholesterol are mainly ______phobic.",
+    "answerText": "hydro",
+    "explanation": "Most of cholesterol is non-polar and hydrophobic."
+  },
+  {
+    "type": "mcq",
+    "question": "Which part of cholesterol is polar and hydrophilic?",
+    "options": [
+      "Its hydroxyl group",
+      "Its hydrocarbon chain",
+      "All four carbon rings"
+    ],
+    "answer": 0,
+    "explanation": "The hydroxyl group forms the hydrophilic end."
+  },
+  {
+    "type": "fill",
+    "question": "Cholesterol is used to make vitamin D, steroid hormones, and ______.",
+    "answerText": "bile",
+    "explanation": "Bile is one of the substances made using cholesterol."
+  },
+  {
+    "type": "mcq",
+    "question": "Where is cholesterol important as a membrane component?",
+    "options": [
+      "Animal cell membranes",
+      "Bacterial cell walls only",
+      "Plant starch granules"
+    ],
+    "answer": 0,
+    "explanation": "Cholesterol helps regulate animal cell membranes."
+  },
+  {
+    "type": "fill",
+    "question": "At high temperatures, cholesterol reduces membrane ______.",
+    "answerText": "fluidity",
+    "explanation": "It restrains phospholipid movement and prevents excessive fluidity."
+  },
+  {
+    "type": "mcq",
+    "question": "How does cholesterol help membranes at low temperatures?",
+    "options": [
+      "It prevents phospholipids from packing too closely",
+      "It removes all phospholipids",
+      "It makes the membrane completely rigid"
+    ],
+    "answer": 0,
+    "explanation": "It maintains fluidity by preventing tight phospholipid packing."
+  },
+  {
+    "type": "fill",
+    "question": "Cholesterol helps control membrane stability and ______.",
+    "answerText": "fluidity",
+    "explanation": "It acts as a fluidity buffer and stabilises animal cell membranes."
+  }
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
