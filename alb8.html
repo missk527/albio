@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protein Structure</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALB8. Protein Structure</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/KcMFFzDn2FE?si=3gFWTBE1V3hJ15p3" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+
+<details open>
+<summary>Overview | Four Levels of Protein Structure</summary>
+<ul>
+<li>Proteins have four structural levels: primary, secondary, tertiary, and quaternary.</li>
+<li>These levels interact to determine each protein's unique shape, properties, and function.</li>
+<li>Each level is defined by a particular arrangement and the bonds or interactions that stabilize it.</li>
+</ul>
+</details>
+<details>
+<summary>Primary Structure | Amino-Acid Sequence</summary>
+<ul>
+<li>Primary structure is the specific sequence of amino acids in a polypeptide chain.</li>
+<li>Adjacent amino acids are joined by strong covalent peptide bonds.</li>
+<li>The amino-acid sequence provides the foundation for all higher levels of protein structure.</li>
+</ul>
+</details>
+<details>
+<summary>Secondary Structure | Hydrogen Bonding</summary>
+<ul>
+<li>Secondary structure forms when parts of a polypeptide backbone coil or fold in regular patterns.</li>
+<li>Hydrogen bonds form between backbone amino groups and carboxyl groups in different parts of the chain.</li>
+<li>The two major forms are the alpha helix and the beta-pleated sheet.</li>
+</ul>
+</details>
+<details>
+<summary>Alpha Helix | Coiled Arrangement</summary>
+<ul>
+<li>An alpha helix is a regularly coiled section of a polypeptide chain.</li>
+<li>Hydrogen bonds between amino acids at different positions stabilize the coil.</li>
+<li>The repeated bonding pattern makes this secondary structure relatively predictable.</li>
+</ul>
+</details>
+<details>
+<summary>Beta-Pleated Sheet | Folded Arrangement</summary>
+<ul>
+<li>A beta-pleated sheet has a folded, zigzag arrangement rather than a coil.</li>
+<li>Hydrogen bonds form between different sections of the polypeptide backbone.</li>
+<li>Like the alpha helix, its repetitive pattern is more predictable than tertiary folding.</li>
+</ul>
+</details>
+<details>
+<summary>Tertiary Structure | Unique 3D Shape</summary>
+<ul>
+<li>Tertiary structure is the overall three-dimensional folding and twisting of one polypeptide chain.</li>
+<li>It is stabilized by interactions between amino-acid R groups.</li>
+<li>This complex, specific folding gives a protein its biological function.</li>
+</ul>
+</details>
+<details>
+<summary>Tertiary Structure | Stabilizing Interactions</summary>
+<ul>
+<li>Hydrogen bonds are weak individually but can be strong collectively.</li>
+<li>Ionic bonds form between oppositely charged R groups.</li>
+<li>Disulfide bridges form between sulfur-containing R groups.</li>
+<li>Hydrophobic and hydrophilic interactions arise from non-polar and polar R groups.</li>
+</ul>
+</details>
+<details>
+<summary>Quaternary Structure | Multiple Polypeptides</summary>
+<ul>
+<li>Quaternary structure occurs only when two or more polypeptide chains associate.</li>
+<li>The subunits are held together by interactions similar to those stabilizing tertiary structure.</li>
+<li>These include hydrogen bonds, ionic bonds, disulfide bridges, and hydrophobic or hydrophilic interactions.</li>
+<li>Proteins made from a single polypeptide chain do not have quaternary structure.</li>
+</ul>
+</details>
+<details>
+<summary>Prosthetic Groups | Non-Protein Components</summary>
+<ul>
+<li>Some complex proteins also contain prosthetic groups attached to their polypeptide chains.</li>
+<li>A prosthetic group is a non-protein component, such as a carbohydrate or lipid.</li>
+<li>Prosthetic groups can contribute to the structure and function of the complete protein.</li>
+</ul>
+</details>
+
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+{"type":"mcq","question":"How many main levels of protein structure are there?","options":["Four","Three","Five"],"answer":0,"explanation":"Proteins are described at four main structural levels."},
+{"type":"fill","question":"The most basic level of protein structure is the ______ structure.","answerText":"primary","explanation":"Primary structure is the amino-acid sequence."},
+{"type":"mcq","question":"Which list gives the levels of protein structure in the correct order?","options":["Primary, secondary, tertiary, quaternary","Primary, tertiary, secondary, quaternary","Secondary, primary, quaternary, tertiary"],"answer":0,"explanation":"The accepted order is primary, secondary, tertiary, and quaternary."},
+{"type":"fill","question":"The four structural levels determine a protein's unique shape and ______.","answerText":"properties","explanation":"Structure determines a protein's overall shape and properties."},
+{"type":"mcq","question":"What does primary protein structure describe?","options":["The amino-acid sequence","A group of several proteins","A coiled alpha helix only"],"answer":0,"explanation":"Primary structure is the order of amino acids in a chain."},
+{"type":"fill","question":"A chain of many amino acids is called a ______ chain.","answerText":"polypeptide","explanation":"Amino acids linked together form a polypeptide."},
+{"type":"mcq","question":"Which bonds link adjacent amino acids in primary structure?","options":["Peptide bonds","Hydrogen bonds","Ionic bonds"],"answer":0,"explanation":"Strong covalent peptide bonds join adjacent amino acids."},
+{"type":"fill","question":"Peptide bonds are described as ______ bonds.","answerText":"strong","explanation":"The speech identifies peptide bonds as strong bonds."},
+{"type":"mcq","question":"What happens to a polypeptide during secondary-structure formation?","options":["It coils or folds in regular ways","It separates into free amino acids","It always joins another chain"],"answer":0,"explanation":"Backbone interactions create regular coils or folds."},
+{"type":"fill","question":"Secondary structure is stabilized mainly by ______ bonds.","answerText":"hydrogen","explanation":"Hydrogen bonds stabilize alpha helices and beta sheets."},
+{"type":"mcq","question":"Hydrogen bonds in secondary structure form between which backbone groups?","options":["Amino and carboxyl groups","Two lipid groups","Two carbohydrate groups"],"answer":0,"explanation":"They form between backbone amino and carboxyl groups."},
+{"type":"fill","question":"The coiled form of secondary structure is called an alpha ______.","answerText":"helix","explanation":"An alpha helix is a coiled secondary structure."},
+{"type":"mcq","question":"Which shape best describes an alpha helix?","options":["A coil","A zigzag sheet","Several separate subunits"],"answer":0,"explanation":"An alpha helix is a coiled arrangement."},
+{"type":"fill","question":"The folded zigzag secondary structure is a beta-pleated ______.","answerText":"sheet","explanation":"The folded form is called a beta-pleated sheet."},
+{"type":"mcq","question":"What causes a beta-pleated sheet to form?","options":["Hydrogen bonds between different parts of the chain","Peptide bonds breaking completely","Lipids attaching to the chain"],"answer":0,"explanation":"Backbone hydrogen bonds stabilize the folded sheet."},
+{"type":"fill","question":"Secondary structures are relatively repetitive and therefore easily ______.","answerText":"predictable","explanation":"Their repeated patterns make them more predictable than tertiary structure."},
+{"type":"mcq","question":"What does tertiary structure represent?","options":["The unique 3D shape of one polypeptide","Only the amino-acid sequence","Two or more polypeptides joining"],"answer":0,"explanation":"Tertiary structure is the overall 3D folding of one chain."},
+{"type":"fill","question":"Tertiary structure involves folding and ______ of the polypeptide chain.","answerText":"twisting","explanation":"The chain folds and twists into a unique 3D form."},
+{"type":"mcq","question":"Which parts of amino acids interact to stabilize tertiary structure?","options":["R groups","Only peptide bonds","Only amino groups"],"answer":0,"explanation":"Several interactions occur between amino-acid R groups."},
+{"type":"fill","question":"Hydrogen bonds are weak individually but strong ______.","answerText":"collectively","explanation":"Many hydrogen bonds together provide significant stability."},
+{"type":"mcq","question":"Ionic bonds form between R groups with what relationship?","options":["Opposite charges","Identical neutral charges","Only sulfur atoms"],"answer":0,"explanation":"Positive and negative R groups attract to form ionic bonds."},
+{"type":"fill","question":"Ionic bonds occur between positive and ______ R groups.","answerText":"negative","explanation":"Oppositely charged R groups form ionic bonds."},
+{"type":"mcq","question":"Which tertiary bond involves sulfur-containing R groups?","options":["A disulfide bridge","A peptide bond","A glycosidic bond"],"answer":0,"explanation":"Sulfur-containing R groups can form disulfide bridges."},
+{"type":"fill","question":"A bond between sulfur-containing R groups is a disulfide ______.","answerText":"bridge","explanation":"This covalent link is called a disulfide bridge."},
+{"type":"mcq","question":"Hydrophobic interactions mainly involve which R groups?","options":["Non-polar R groups","Positively charged R groups only","Backbone amino groups only"],"answer":0,"explanation":"Hydrophobic behavior is associated with non-polar R groups."},
+{"type":"fill","question":"Hydrophilic interactions are associated with ______ R groups.","answerText":"polar","explanation":"Polar R groups interact favorably with water."},
+{"type":"mcq","question":"Why is tertiary folding biologically important?","options":["It gives the protein its specific function","It changes amino acids into carbohydrates","It always creates four subunits"],"answer":0,"explanation":"A protein's precise 3D shape enables its function."},
+{"type":"fill","question":"A protein's complex 3D folding gives it a specific ______.","answerText":"function","explanation":"Shape and function are closely related."},
+{"type":"mcq","question":"When does quaternary structure occur?","options":["When two or more polypeptide chains join","Whenever one amino acid forms","Only when an alpha helix unfolds"],"answer":0,"explanation":"Quaternary structure requires multiple polypeptide chains."},
+{"type":"fill","question":"Quaternary structure always involves ______ polypeptide chains.","answerText":"multiple","explanation":"At least two polypeptide chains are required."},
+{"type":"mcq","question":"Which protein lacks quaternary structure?","options":["A protein made from one polypeptide chain","A protein made from four polypeptide chains","A protein made from two polypeptide chains"],"answer":0,"explanation":"A single-chain protein has no quaternary level."},
+{"type":"fill","question":"Two or more polypeptide chains can combine to form the ______ structure.","answerText":"quaternary","explanation":"Association of multiple chains creates quaternary structure."},
+{"type":"mcq","question":"Which interaction can stabilize both tertiary and quaternary structures?","options":["Hydrogen bonds","Glycosidic bonds","Phosphodiester bonds"],"answer":0,"explanation":"Hydrogen bonding can stabilize both levels."},
+{"type":"fill","question":"Tertiary and quaternary structures may both contain ______ bonds between charged R groups.","answerText":"ionic","explanation":"Ionic bonds can stabilize both levels."},
+{"type":"mcq","question":"Which set contains only interactions mentioned for quaternary structure?","options":["Hydrogen bonds, ionic bonds, disulfide bridges, and hydrophobic interactions","Peptide bonds, glycosidic bonds, and phosphodiester bonds","Only peptide bonds and hydrogen bonds"],"answer":0,"explanation":"Quaternary structure uses interactions similar to tertiary structure."},
+{"type":"fill","question":"Some complex proteins include attached non-protein components called ______ groups.","answerText":"prosthetic","explanation":"These attached non-protein components are prosthetic groups."},
+{"type":"mcq","question":"What is a prosthetic group?","options":["A non-protein component attached to a protein","A free amino acid","A peptide bond"],"answer":0,"explanation":"A prosthetic group is an attached non-protein component."},
+{"type":"fill","question":"A carbohydrate attached to a polypeptide can act as a ______ group.","answerText":"prosthetic","explanation":"Carbohydrates are one example of prosthetic groups."},
+{"type":"mcq","question":"Which is given as an example of a prosthetic group?","options":["A lipid","A separate polypeptide only","A peptide bond"],"answer":0,"explanation":"The speech gives carbohydrates and lipids as examples."},
+{"type":"fill","question":"Protein structure builds from an amino-acid sequence toward a complex three-dimensional ______.","answerText":"shape","explanation":"The structural levels build up to produce the protein's overall shape."}
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
