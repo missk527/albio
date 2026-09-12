@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Water</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALB9. Water</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/4p6H15MQ0gg?si=vqkKN3ZBEZpTF0zA" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+
+<details open>
+<summary>Overview | Structure and Functions of Water</summary>
+<ul>
+<li>Water is essential to living organisms because of its molecular structure and polarity.</li>
+<li>Its major roles include acting as a solvent, metabolite, transport medium, temperature regulator, and habitat.</li>
+</ul>
+</details>
+<details>
+<summary>Water Molecule | Covalent Bonds and Polarity</summary>
+<ul>
+<li>One water molecule contains one oxygen atom covalently bonded to two hydrogen atoms.</li>
+<li>The atoms share electrons, but oxygen attracts the shared electrons more strongly.</li>
+<li>Oxygen therefore has a partial negative charge (δ−), while each hydrogen has a partial positive charge (δ+).</li>
+<li>This unequal charge distribution makes water dipolar, with positive and negative poles.</li>
+</ul>
+</details>
+<details>
+<summary>Hydrogen Bonding | Attraction Between Molecules</summary>
+<ul>
+<li>The partially positive hydrogen of one water molecule attracts the partially negative oxygen of another.</li>
+<li>This attraction forms a hydrogen bond.</li>
+<li>Hydrogen bonds are weak individually but strong collectively, causing water molecules to stay together.</li>
+</ul>
+</details>
+<details>
+<summary>Water as a Solvent | Dissolving Ionic Compounds</summary>
+<ul>
+<li>Ionic compounds contain positively charged cations and negatively charged anions.</li>
+<li>In water, cations are attracted to δ− oxygen atoms and anions to δ+ hydrogen atoms.</li>
+<li>This separates and surrounds the ions, allowing many ionic substances to dissolve.</li>
+<li>Water is often called a universal solvent because it dissolves many substances.</li>
+</ul>
+</details>
+<details>
+<summary>Biological Solutions | Plasma and Cytoplasm</summary>
+<ul>
+<li>Blood plasma is mostly water, so it can transport many dissolved substances around the body.</li>
+<li>Many important biological reactions occur in solution within the cytoplasm.</li>
+</ul>
+</details>
+<details>
+<summary>Water as a Metabolite | Reactions</summary>
+<ul>
+<li>Water is directly involved in many metabolic reactions.</li>
+<li>Hydrolysis uses water to break large molecules into smaller ones.</li>
+<li>Condensation joins molecules and releases water.</li>
+<li>Water is a reactant in photosynthesis and a product of respiration.</li>
+</ul>
+</details>
+<details>
+<summary>Transport Medium | Cohesion and Adhesion</summary>
+<ul>
+<li>Cohesion is the attraction between water molecules caused by hydrogen bonding.</li>
+<li>Adhesion is the attraction between water molecules and other polar surfaces.</li>
+<li>In xylem, adhesion helps water cling to vessel walls, while cohesion maintains a continuous water column.</li>
+<li>Together, these properties help move water and dissolved minerals upward through plants.</li>
+</ul>
+</details>
+<details>
+<summary>Surface Tension | Supporting Small Organisms</summary>
+<ul>
+<li>Strong cohesion creates high surface tension where water meets air.</li>
+<li>The water surface behaves like a thin skin and can support small organisms such as water striders.</li>
+</ul>
+</details>
+<details>
+<summary>Temperature Control | Heat Capacity and Evaporation</summary>
+<ul>
+<li>Water has a high specific heat capacity because much energy is needed to disrupt its many hydrogen bonds.</li>
+<li>It absorbs substantial energy before its temperature rises, helping organisms maintain stable temperatures.</li>
+<li>Water also has a high latent heat of vaporization, so evaporation removes a large amount of heat.</li>
+<li>Sweating cools the body effectively without requiring the loss of excessive water.</li>
+</ul>
+</details>
+<details>
+<summary>Water as a Habitat | Stability and Floating Ice</summary>
+<ul>
+<li>Water's thermal properties help aquatic habitats maintain a relatively stable temperature and physical state.</li>
+<li>When water freezes, hydrogen bonds hold molecules farther apart than in liquid water.</li>
+<li>Ice is therefore less dense than liquid water and floats.</li>
+<li>Floating ice insulates the water below, reducing further freezing and protecting aquatic life in winter.</li>
+</ul>
+</details>
+
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+{"type":"mcq","question":"How many hydrogen atoms are in one water molecule?","options":["Two","One","Three"],"answer":0,"explanation":"A water molecule is H₂O: two hydrogen atoms and one oxygen atom."},
+{"type":"fill","question":"The atoms within a water molecule are joined by ______ bonds.","answerText":"covalent","explanation":"Oxygen and hydrogen share electrons in covalent bonds."},
+{"type":"mcq","question":"Which atom attracts the shared electrons more strongly?","options":["Oxygen","Hydrogen","Both equally"],"answer":0,"explanation":"Oxygen pulls the shared electrons closer."},
+{"type":"fill","question":"The oxygen atom has a partial ______ charge.","answerText":"negative","explanation":"Its stronger attraction for electrons gives oxygen a partial negative charge."},
+{"type":"mcq","question":"What charge does each hydrogen carry in water?","options":["Partial positive","Partial negative","Full negative"],"answer":0,"explanation":"Each hydrogen has a partial positive charge."},
+{"type":"fill","question":"A molecule with positive and negative poles is described as ______.","answerText":"dipolar","explanation":"Water is dipolar because its charge is unevenly distributed."},
+{"type":"mcq","question":"What forms between neighboring water molecules?","options":["Hydrogen bonds","Peptide bonds","Glycosidic bonds"],"answer":0,"explanation":"Opposite partial charges attract to form hydrogen bonds."},
+{"type":"fill","question":"Hydrogen bonds are weak individually but strong ______.","answerText":"collectively","explanation":"Large numbers of hydrogen bonds have a strong combined effect."},
+{"type":"mcq","question":"What is a positively charged ion called?","options":["Cation","Anion","Isotope"],"answer":0,"explanation":"A positively charged ion is a cation."},
+{"type":"fill","question":"A negatively charged ion is called an ______.","answerText":"anion","explanation":"An anion carries a negative charge."},
+{"type":"mcq","question":"Which part of water attracts cations?","options":["The partially negative oxygen","The partially positive hydrogens","Neither part"],"answer":0,"explanation":"Positive ions are attracted to the δ− oxygen."},
+{"type":"fill","question":"Anions are attracted to the partially positive ______ atoms.","answerText":"hydrogen","explanation":"Negative ions are attracted to water's δ+ hydrogens."},
+{"type":"mcq","question":"Why is water often called a universal solvent?","options":["It dissolves many substances","It dissolves every substance","It never reacts"],"answer":0,"explanation":"Many, although not all, substances dissolve in water."},
+{"type":"fill","question":"Blood ______ is mostly water and transports dissolved substances.","answerText":"plasma","explanation":"Blood plasma is water-rich and acts as a transport medium."},
+{"type":"mcq","question":"Where do many biological reactions occur?","options":["In solution within the cytoplasm","Only in bones","Only outside cells"],"answer":0,"explanation":"Many cellular reactions occur in aqueous cytoplasmic solutions."},
+{"type":"fill","question":"A substance involved in metabolic reactions is a ______.","answerText":"metabolite","explanation":"Water is an important metabolite."},
+{"type":"mcq","question":"Which reaction uses water to split large molecules?","options":["Hydrolysis","Condensation","Respiration only"],"answer":0,"explanation":"Hydrolysis consumes water when breaking bonds."},
+{"type":"fill","question":"A ______ reaction joins molecules and releases water.","answerText":"condensation","explanation":"Condensation produces water while joining molecules."},
+{"type":"mcq","question":"In which process is water a reactant?","options":["Photosynthesis","Respiration","Evaporation only"],"answer":0,"explanation":"Photosynthesis uses water as a reactant."},
+{"type":"fill","question":"Water is a product of cellular ______.","answerText":"respiration","explanation":"Respiration produces water."},
+{"type":"mcq","question":"What does cohesion describe?","options":["Water molecules sticking together","Water sticking to other polar materials","Ions losing charge"],"answer":0,"explanation":"Cohesion is attraction among water molecules."},
+{"type":"fill","question":"Water sticking to other polar substances is called ______.","answerText":"adhesion","explanation":"Adhesion is attraction to another polar surface."},
+{"type":"mcq","question":"What maintains a continuous water column in xylem?","options":["Cohesion","Condensation","Respiration"],"answer":0,"explanation":"Cohesion holds water molecules together in a column."},
+{"type":"fill","question":"Adhesion helps water stick to the ______ walls.","answerText":"xylem","explanation":"Water adheres to the polar walls of xylem vessels."},
+{"type":"mcq","question":"What can water carry upward through a plant?","options":["Dissolved minerals","Only oxygen gas","Proteins only"],"answer":0,"explanation":"The water column transports dissolved mineral ions."},
+{"type":"fill","question":"Strong cohesion creates high surface ______.","answerText":"tension","explanation":"Cohesion produces high surface tension at the water-air boundary."},
+{"type":"mcq","question":"Which organism can be supported by water's surface tension?","options":["Water strider","Large fish","Earthworm"],"answer":0,"explanation":"Water striders can stand on the surface film."},
+{"type":"fill","question":"Water can act as a transport ______ because it flows and carries solutes.","answerText":"medium","explanation":"Water is an effective transport medium."},
+{"type":"mcq","question":"What does high specific heat capacity mean?","options":["Much energy is needed to change water's temperature","Water freezes instantly","Water cannot absorb energy"],"answer":0,"explanation":"Water absorbs much energy before its temperature changes."},
+{"type":"fill","question":"High specific heat capacity makes water a temperature ______.","answerText":"buffer","explanation":"It limits rapid temperature changes."},
+{"type":"mcq","question":"Why does water have a high specific heat capacity?","options":["Energy is needed to disrupt many hydrogen bonds","It contains ionic bonds","Oxygen has no electrons"],"answer":0,"explanation":"Its many hydrogen bonds absorb energy."},
+{"type":"fill","question":"Organisms remain thermally stable partly because they contain a lot of ______.","answerText":"water","explanation":"The water in organisms buffers temperature change."},
+{"type":"mcq","question":"What does high latent heat of vaporization mean?","options":["Much energy is needed to turn liquid water into gas","Water boils without energy","Ice is denser than water"],"answer":0,"explanation":"Vaporization requires substantial energy."},
+{"type":"fill","question":"Evaporation of sweat removes ______ energy from the body.","answerText":"heat","explanation":"Sweat carries away heat as it evaporates."},
+{"type":"mcq","question":"Why is sweating an efficient cooling mechanism?","options":["A large amount of heat is lost with relatively little water","Sweat freezes immediately","It stops all metabolism"],"answer":0,"explanation":"Water's high latent heat allows strong cooling with limited water loss."},
+{"type":"fill","question":"Water provides a thermally stable ______ for aquatic organisms.","answerText":"habitat","explanation":"Its temperature changes slowly and it does not change state easily."},
+{"type":"mcq","question":"What happens to water molecules when water freezes?","options":["They become more widely spaced","They pack much closer together","They lose all hydrogen bonds"],"answer":0,"explanation":"Hydrogen bonds create an open structure in ice."},
+{"type":"fill","question":"Ice is less ______ than liquid water.","answerText":"dense","explanation":"The more open solid structure lowers the density of ice."},
+{"type":"mcq","question":"Why does ice float?","options":["It is less dense than liquid water","It is warmer than all liquid water","It contains no oxygen"],"answer":0,"explanation":"Less-dense ice stays above denser liquid water."},
+{"type":"fill","question":"Floating ice ______ the water beneath it and protects aquatic life.","answerText":"insulates","explanation":"The ice layer slows heat loss and helps prevent deeper water from freezing."}
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
