@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coherence and Interference</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALB10. ATP Structure and Function</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/pcT72Wg4DX4?si=D1FxRbODS7kqlOmm" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+<details open>
+<summary>ATP Structure</summary>
+<ul>
+<li>ATP stands for adenosine triphosphate. It is a nucleotide that transfers energy within cells.</li>
+<li>ATP contains the nitrogenous base adenine, the five-carbon sugar ribose and three phosphate groups.</li>
+<li>Adenosine is adenine joined to ribose; triphosphate means three phosphates. ADP, adenosine diphosphate, has two phosphate groups.</li>
+</ul>
+</details>
+<details>
+<summary>ATP Synthesis</summary>
+<ul>
+<li>ATP is formed when ADP combines with inorganic phosphate (Pi): ADP + Pi + energy → ATP + water.</li>
+<li>ATP synthase catalyses this energy-requiring condensation reaction. A bond forms between phosphate groups and water is released.</li>
+<li>ATP can be regenerated repeatedly from ADP and Pi.</li>
+</ul>
+</details>
+<details>
+<summary>ATP Hydrolysis</summary>
+<ul>
+<li>ATP hydrolase catalyses hydrolysis: ATP + water → ADP + Pi + energy.</li>
+<li>Water is used to break the bond to the outermost phosphate group, releasing usable energy.</li>
+<li>The synthesis and hydrolysis reactions together form a renewable ATP cycle.</li>
+</ul>
+</details>
+<details>
+<summary>Cellular Uses of ATP</summary>
+<ul>
+<li>ATP supplies energy for muscle contraction and movement of cells such as sperm.</li>
+<li>It drives active transport against a concentration gradient, including uptake of mineral ions by plant roots.</li>
+<li>ATP supports synthesis of large molecules such as proteins and secretion of substances such as hormones.</li>
+<li>ATP can donate a phosphate group to another molecule. Phosphorylation can activate enzymes by changing their activity.</li>
+</ul>
+</details>
+<details>
+<summary>Why ATP Is an Immediate Energy Source</summary>
+<ul>
+<li>Each ATP hydrolysis releases a manageable amount of energy, limiting waste as heat.</li>
+<li>ATP releases energy in a single step and can be resynthesised rapidly.</li>
+<li>ATP is soluble and can move through cells to where energy is needed.</li>
+<li>ATP is suited to immediate energy transfer rather than long-term energy storage.</li>
+</ul>
+</details>
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+  {
+    "type": "mcq",
+    "question": "What does ATP stand for?",
+    "options": [
+      "Adenosine triphosphate.",
+      "Adenosine diphosphate.",
+      "Adenine monophosphate."
+    ],
+    "answer": 0,
+    "explanation": "Adenosine triphosphate."
+  },
+  {
+    "type": "mcq",
+    "question": "What type of molecule is ATP?",
+    "options": [
+      "A protein.",
+      "A lipid.",
+      "A nucleotide."
+    ],
+    "answer": 2,
+    "explanation": "A nucleotide."
+  },
+  {
+    "type": "mcq",
+    "question": "Which nitrogenous base is found in ATP?",
+    "options": [
+      "Guanine.",
+      "Adenine.",
+      "Cytosine."
+    ],
+    "answer": 1,
+    "explanation": "Adenine."
+  },
+  {
+    "type": "mcq",
+    "question": "Which five-carbon sugar is found in ATP?",
+    "options": [
+      "Ribose.",
+      "Glucose.",
+      "Deoxyribose."
+    ],
+    "answer": 0,
+    "explanation": "Ribose."
+  },
+  {
+    "type": "mcq",
+    "question": "How many phosphate groups does ATP have?",
+    "options": [
+      "Two.",
+      "One.",
+      "Three."
+    ],
+    "answer": 2,
+    "explanation": "Three."
+  },
+  {
+    "type": "mcq",
+    "question": "What does adenosine consist of?",
+    "options": [
+      "Adenine and glucose.",
+      "Adenine and ribose.",
+      "Ribose and three phosphates."
+    ],
+    "answer": 1,
+    "explanation": "Adenine and ribose."
+  },
+  {
+    "type": "mcq",
+    "question": "What does triphosphate indicate?",
+    "options": [
+      "Three phosphate groups.",
+      "Three sugar groups.",
+      "Three nitrogenous bases."
+    ],
+    "answer": 0,
+    "explanation": "Three phosphate groups."
+  },
+  {
+    "type": "mcq",
+    "question": "How many phosphate groups does ADP have?",
+    "options": [
+      "One.",
+      "Three.",
+      "Two."
+    ],
+    "answer": 2,
+    "explanation": "Two."
+  },
+  {
+    "type": "mcq",
+    "question": "What does ADP stand for?",
+    "options": [
+      "Adenine diphosphate.",
+      "Adenosine diphosphate.",
+      "Adenosine triphosphate."
+    ],
+    "answer": 1,
+    "explanation": "Adenosine diphosphate."
+  },
+  {
+    "type": "mcq",
+    "question": "What does Pi represent?",
+    "options": [
+      "Inorganic phosphate.",
+      "A protein ion.",
+      "A sugar molecule."
+    ],
+    "answer": 0,
+    "explanation": "Inorganic phosphate."
+  },
+  {
+    "type": "mcq",
+    "question": "Which two reactants combine to form ATP?",
+    "options": [
+      "ATP and water.",
+      "Adenine and glucose.",
+      "ADP and inorganic phosphate."
+    ],
+    "answer": 2,
+    "explanation": "ADP and inorganic phosphate."
+  },
+  {
+    "type": "mcq",
+    "question": "Which enzyme catalyses ATP synthesis?",
+    "options": [
+      "Amylase.",
+      "ATP synthase.",
+      "ATP hydrolase."
+    ],
+    "answer": 1,
+    "explanation": "ATP synthase."
+  },
+  {
+    "type": "mcq",
+    "question": "What type of reaction forms ATP from ADP and Pi?",
+    "options": [
+      "Condensation.",
+      "Hydrolysis.",
+      "Diffusion."
+    ],
+    "answer": 0,
+    "explanation": "Condensation."
+  },
+  {
+    "type": "mcq",
+    "question": "What is released as a by-product of ATP synthesis?",
+    "options": [
+      "Oxygen.",
+      "Carbon dioxide.",
+      "Water."
+    ],
+    "answer": 2,
+    "explanation": "Water."
+  },
+  {
+    "type": "mcq",
+    "question": "What input is required to synthesize ATP?",
+    "options": [
+      "A protein.",
+      "Energy.",
+      "A hormone."
+    ],
+    "answer": 1,
+    "explanation": "Energy."
+  },
+  {
+    "type": "mcq",
+    "question": "What happens to phosphate groups during ATP synthesis?",
+    "options": [
+      "A new bond forms between them.",
+      "All phosphate groups are removed.",
+      "They turn into ribose."
+    ],
+    "answer": 0,
+    "explanation": "A new bond forms between them."
+  },
+  {
+    "type": "mcq",
+    "question": "What type of reaction breaks down ATP?",
+    "options": [
+      "Condensation.",
+      "Photosynthesis.",
+      "Hydrolysis."
+    ],
+    "answer": 2,
+    "explanation": "Hydrolysis."
+  },
+  {
+    "type": "mcq",
+    "question": "Which enzyme catalyses ATP breakdown in the speech?",
+    "options": [
+      "DNA polymerase.",
+      "ATP hydrolase.",
+      "ATP synthase."
+    ],
+    "answer": 1,
+    "explanation": "ATP hydrolase."
+  },
+  {
+    "type": "mcq",
+    "question": "What molecule is added during ATP hydrolysis?",
+    "options": [
+      "Water.",
+      "Glucose.",
+      "Oxygen."
+    ],
+    "answer": 0,
+    "explanation": "Water."
+  },
+  {
+    "type": "mcq",
+    "question": "What are the products of ATP hydrolysis?",
+    "options": [
+      "ATP and water.",
+      "Adenine and ribose only.",
+      "ADP, inorganic phosphate and energy."
+    ],
+    "answer": 2,
+    "explanation": "ADP, inorganic phosphate and energy."
+  },
+  {
+    "type": "mcq",
+    "question": "Which phosphate is removed when ATP is hydrolysed to ADP?",
+    "options": [
+      "The phosphate closest to ribose.",
+      "The outermost phosphate.",
+      "All three phosphates."
+    ],
+    "answer": 1,
+    "explanation": "The outermost phosphate."
+  },
+  {
+    "type": "mcq",
+    "question": "Why can ATP be used repeatedly in a cell?",
+    "options": [
+      "ADP and Pi can be recombined to reform ATP.",
+      "ATP cannot be broken down.",
+      "ADP is permanently discarded."
+    ],
+    "answer": 0,
+    "explanation": "ADP and Pi can be recombined to reform ATP."
+  },
+  {
+    "type": "mcq",
+    "question": "What does ATP hydrolysis provide to cellular processes?",
+    "options": [
+      "A second ribose molecule.",
+      "A new nitrogenous base.",
+      "Usable energy."
+    ],
+    "answer": 2,
+    "explanation": "Usable energy."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the ATP cycle?",
+    "options": [
+      "Conversion of ATP into DNA.",
+      "Repeated ATP synthesis and hydrolysis.",
+      "Permanent storage of ATP."
+    ],
+    "answer": 1,
+    "explanation": "Repeated ATP synthesis and hydrolysis."
+  },
+  {
+    "type": "mcq",
+    "question": "Which activity uses ATP to move muscles?",
+    "options": [
+      "Muscle contraction.",
+      "Passive diffusion.",
+      "Osmosis."
+    ],
+    "answer": 0,
+    "explanation": "Muscle contraction."
+  },
+  {
+    "type": "mcq",
+    "question": "Which mobile cell example in the speech uses ATP?",
+    "options": [
+      "A red blood cell carrying oxygen.",
+      "A stationary root hair cell.",
+      "A swimming sperm cell."
+    ],
+    "answer": 2,
+    "explanation": "A swimming sperm cell."
+  },
+  {
+    "type": "mcq",
+    "question": "What is active transport?",
+    "options": [
+      "Movement of water only.",
+      "Movement against a concentration gradient using energy.",
+      "Movement down a gradient without energy."
+    ],
+    "answer": 1,
+    "explanation": "Movement against a concentration gradient using energy."
+  },
+  {
+    "type": "mcq",
+    "question": "What plant example illustrates ATP-powered active transport?",
+    "options": [
+      "Mineral ion uptake by roots from soil.",
+      "Water evaporation from leaves.",
+      "Pollen transfer by wind."
+    ],
+    "answer": 0,
+    "explanation": "Mineral ion uptake by roots from soil."
+  },
+  {
+    "type": "mcq",
+    "question": "What large molecules does ATP help cells synthesize?",
+    "options": [
+      "Mineral ions.",
+      "Water molecules.",
+      "Proteins."
+    ],
+    "answer": 2,
+    "explanation": "Proteins."
+  },
+  {
+    "type": "mcq",
+    "question": "What is an example of ATP-supported secretion?",
+    "options": [
+      "Water passing through a membrane.",
+      "Hormone release from gland cells.",
+      "Diffusion of oxygen into cells."
+    ],
+    "answer": 1,
+    "explanation": "Hormone release from gland cells."
+  },
+  {
+    "type": "mcq",
+    "question": "What does phosphorylation add to a molecule?",
+    "options": [
+      "A phosphate group.",
+      "A ribose sugar.",
+      "An adenine base."
+    ],
+    "answer": 0,
+    "explanation": "A phosphate group."
+  },
+  {
+    "type": "mcq",
+    "question": "How can ATP activate an enzyme?",
+    "options": [
+      "It removes all enzyme amino acids.",
+      "It converts the enzyme into glucose.",
+      "It donates a phosphate group that changes enzyme activity."
+    ],
+    "answer": 2,
+    "explanation": "It donates a phosphate group that changes enzyme activity."
+  },
+  {
+    "type": "mcq",
+    "question": "Is ATP mainly a long-term or immediate energy source?",
+    "options": [
+      "A permanent energy store.",
+      "An immediate energy source.",
+      "A long-term energy store."
+    ],
+    "answer": 1,
+    "explanation": "An immediate energy source."
+  },
+  {
+    "type": "mcq",
+    "question": "Why is a small energy release from ATP useful?",
+    "options": [
+      "Less energy is wasted as heat.",
+      "It prevents all cellular movement.",
+      "It stops ATP being regenerated."
+    ],
+    "answer": 0,
+    "explanation": "Less energy is wasted as heat."
+  },
+  {
+    "type": "mcq",
+    "question": "How many steps are needed to release energy by ATP hydrolysis?",
+    "options": [
+      "Ten steps.",
+      "Hundreds of steps.",
+      "One step."
+    ],
+    "answer": 2,
+    "explanation": "One step."
+  },
+  {
+    "type": "mcq",
+    "question": "Why is ATP available again soon after use?",
+    "options": [
+      "It is stored permanently in nuclei.",
+      "It can be rapidly resynthesised.",
+      "It never undergoes hydrolysis."
+    ],
+    "answer": 1,
+    "explanation": "It can be rapidly resynthesised."
+  },
+  {
+    "type": "mcq",
+    "question": "Which property helps ATP move to where it is needed?",
+    "options": [
+      "It is soluble.",
+      "It is insoluble.",
+      "It forms a rigid cell wall."
+    ],
+    "answer": 0,
+    "explanation": "It is soluble."
+  },
+  {
+    "type": "mcq",
+    "question": "Where can ATP be transported because of its solubility?",
+    "options": [
+      "Only outside organisms.",
+      "Only inside the nucleus.",
+      "Around the cell."
+    ],
+    "answer": 2,
+    "explanation": "Around the cell."
+  },
+  {
+    "type": "mcq",
+    "question": "What kind of energy supply does ATP provide for cells?",
+    "options": [
+      "Energy only during cell division.",
+      "Rapid, local energy transfer.",
+      "Long-term fat storage."
+    ],
+    "answer": 1,
+    "explanation": "Rapid, local energy transfer."
+  },
+  {
+    "type": "mcq",
+    "question": "Name one process powered by ATP.",
+    "options": [
+      "Active transport.",
+      "Passive diffusion.",
+      "Simple osmosis."
+    ],
+    "answer": 0,
+    "explanation": "Active transport."
+  }
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
