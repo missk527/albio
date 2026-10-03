@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enzyme Action</title>
+<style>
+:root{
+--brand:#0ea5e9;
+--ink:#1f2937;
+--paper:#fafafa;
+--card:#ffffff;
+--muted:#6b7280;
+--good:#16a34a;
+--bad:#dc2626;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:var(--paper);
+line-height:1.6;
+}
+header{
+background:linear-gradient(135deg,var(--brand),#6366f1);
+color:white;
+padding:20px 16px;
+text-align:center;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.card{
+background:var(--card);
+border-radius:12px;
+padding:18px;
+box-shadow:0 6px 18px rgba(2,6,23,.08);
+margin:16px 0;
+}
+iframe{
+width:100%;
+max-width:900px;
+height:480px;
+border:0;
+border-radius:12px;
+}
+details{
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:10px 12px;
+margin:10px 0;
+background:#fff;
+}
+summary{
+font-weight:700;
+color:#0f766e;
+cursor:pointer;
+}
+.btn{
+background:var(--brand);
+color:white;
+border:0;
+border-radius:10px;
+padding:10px 14px;
+font-weight:700;
+cursor:pointer;
+}
+.correct{color:green}
+.incorrect{color:red}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALB11. Enzyme Action</h1>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/BFWRPr3_y_M?si=Cu8QqQv0RWdvu868" allowfullscreen></iframe>
+</div>
+
+<section class="card">
+<h2>Key Notes (Synced with Video)</h2>
+<details open>
+<summary>What Are Enzymes?</summary>
+<ul>
+<li>Enzymes are globular proteins that act as biological catalysts in living organisms.</li>
+<li>They speed up chemical reactions without being used up and can be reused.</li>
+</ul>
+</details>
+<details>
+<summary>Activation Energy</summary>
+<ul>
+<li>Activation energy is the initial energy needed to start a reaction.</li>
+<li>Enzymes lower the activation-energy barrier, so reactions happen more easily and quickly.</li>
+<li>On an energy profile, the catalysed reaction has a lower peak relative to the reactants.</li>
+</ul>
+</details>
+<details>
+<summary>Intracellular and Extracellular Enzymes</summary>
+<ul>
+<li>Intracellular enzymes act inside cells. Catalase breaks down harmful hydrogen peroxide into water and oxygen.</li>
+<li>Extracellular enzymes act outside cells, even when they are still inside the body.</li>
+<li>Amylase acts in the mouth and small intestine, breaking starch into smaller carbohydrates.</li>
+<li>Trypsin acts in the small intestine, breaking proteins into smaller peptides. Further digestion produces amino acids.</li>
+</ul>
+</details>
+<details>
+<summary>Active Sites and Enzyme Action</summary>
+<ul>
+<li>An enzyme has a specific three-dimensional shape called its tertiary structure.</li>
+<li>The active site is the region where a substrate binds. A substrate is the molecule the enzyme acts on.</li>
+<li>A complementary active site fits its substrate, helping explain enzyme specificity.</li>
+<li>Binding forms an enzyme-substrate complex. Temporary interactions help lower activation energy.</li>
+<li>Products are released after the reaction; the enzyme remains unchanged and can bind another substrate.</li>
+</ul>
+</details>
+<details>
+<summary>Lock and Key Model</summary>
+<ul>
+<li>The active site has a fixed shape that is complementary to a particular substrate.</li>
+<li>The substrate fits precisely, like a key fitting a lock.</li>
+</ul>
+</details>
+<details>
+<summary>Induced Fit Model</summary>
+<ul>
+<li>The active site is flexible; the substrate does not fit perfectly at first.</li>
+<li>Substrate binding causes a slight change in active-site shape, improving the fit.</li>
+<li>This change can strain bonds in the substrate and lower activation energy.</li>
+<li>The video explains that there is more supporting evidence for induced fit than for the lock and key model.</li>
+</ul>
+</details>
+</section>
+
+<section class="card">
+<h2>Quiz (40 Questions)</h2>
+<div id="game-area">
+<button class="btn" onclick="startGame()">Start Quiz</button>
+</div>
+</section>
+
+</div>
+
+<script>
+const questions=[
+  {
+    "type": "mcq",
+    "question": "What type of biological molecule are enzymes?",
+    "options": [
+      "Proteins.",
+      "Lipids.",
+      "Carbohydrates."
+    ],
+    "answer": 0,
+    "explanation": "Proteins."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the role of an enzyme?",
+    "options": [
+      "To store genetic information.",
+      "To act as a biological catalyst.",
+      "To become a reaction product."
+    ],
+    "answer": 1,
+    "explanation": "To act as a biological catalyst."
+  },
+  {
+    "type": "mcq",
+    "question": "What does a catalyst do to the rate of a reaction?",
+    "options": [
+      "It stops the reaction.",
+      "It always decreases the reaction rate.",
+      "It increases the reaction rate."
+    ],
+    "answer": 2,
+    "explanation": "It increases the reaction rate."
+  },
+  {
+    "type": "mcq",
+    "question": "Are enzymes used up during the reactions they catalyse?",
+    "options": [
+      "No; they remain available for reuse.",
+      "Yes; every enzyme is consumed.",
+      "Yes; they become substrates."
+    ],
+    "answer": 0,
+    "explanation": "No; they remain available for reuse."
+  },
+  {
+    "type": "mcq",
+    "question": "What is activation energy?",
+    "options": [
+      "The energy stored only in the products.",
+      "The initial energy needed to start a reaction.",
+      "The total energy released by an organism."
+    ],
+    "answer": 1,
+    "explanation": "The initial energy needed to start a reaction."
+  },
+  {
+    "type": "mcq",
+    "question": "How do enzymes affect activation energy?",
+    "options": [
+      "They raise it.",
+      "They remove all energy from the products.",
+      "They lower it."
+    ],
+    "answer": 2,
+    "explanation": "They lower it."
+  },
+  {
+    "type": "mcq",
+    "question": "Why does a lower activation energy make a reaction faster?",
+    "options": [
+      "The reaction can start more easily.",
+      "The enzyme is used up more quickly.",
+      "The substrate becomes an enzyme."
+    ],
+    "answer": 0,
+    "explanation": "The reaction can start more easily."
+  },
+  {
+    "type": "mcq",
+    "question": "On an energy profile, what does the activation-energy arrow represent?",
+    "options": [
+      "The number of enzyme molecules.",
+      "The energy rise from the reactants to the reaction peak.",
+      "The time taken to release products."
+    ],
+    "answer": 1,
+    "explanation": "The energy rise from the reactants to the reaction peak."
+  },
+  {
+    "type": "mcq",
+    "question": "Which reaction has the lower activation-energy barrier: with or without an enzyme?",
+    "options": [
+      "The reaction without an enzyme.",
+      "Both must have identical barriers.",
+      "The reaction with an enzyme."
+    ],
+    "answer": 2,
+    "explanation": "The reaction with an enzyme."
+  },
+  {
+    "type": "mcq",
+    "question": "What are the two enzyme categories described in the video?",
+    "options": [
+      "Intracellular and extracellular enzymes.",
+      "Soluble and genetic enzymes.",
+      "Nuclear and phosphate enzymes."
+    ],
+    "answer": 0,
+    "explanation": "Intracellular and extracellular enzymes."
+  },
+  {
+    "type": "mcq",
+    "question": "Where do intracellular enzymes act?",
+    "options": [
+      "Only outside the body.",
+      "Inside cells.",
+      "Only in the intestinal lumen."
+    ],
+    "answer": 1,
+    "explanation": "Inside cells."
+  },
+  {
+    "type": "mcq",
+    "question": "Which intracellular enzyme breaks down hydrogen peroxide?",
+    "options": [
+      "Amylase.",
+      "Trypsin.",
+      "Catalase."
+    ],
+    "answer": 2,
+    "explanation": "Catalase."
+  },
+  {
+    "type": "mcq",
+    "question": "Why must cells break down hydrogen peroxide?",
+    "options": [
+      "It is a harmful waste product.",
+      "It is the active site of every enzyme.",
+      "It prevents all protein synthesis by definition."
+    ],
+    "answer": 0,
+    "explanation": "It is a harmful waste product."
+  },
+  {
+    "type": "mcq",
+    "question": "What are the products of hydrogen peroxide breakdown by catalase?",
+    "options": [
+      "Starch and glucose.",
+      "Water and oxygen.",
+      "Proteins and carbon dioxide."
+    ],
+    "answer": 1,
+    "explanation": "Water and oxygen."
+  },
+  {
+    "type": "mcq",
+    "question": "Where do extracellular enzymes act?",
+    "options": [
+      "Only inside the nucleus.",
+      "Only inside mitochondria.",
+      "Outside cells."
+    ],
+    "answer": 2,
+    "explanation": "Outside cells."
+  },
+  {
+    "type": "mcq",
+    "question": "Can an extracellular enzyme act inside the body?",
+    "options": [
+      "Yes; outside cells can still be inside the body.",
+      "No; extracellular means outside the body.",
+      "Only if it becomes intracellular."
+    ],
+    "answer": 0,
+    "explanation": "Yes; outside cells can still be inside the body."
+  },
+  {
+    "type": "mcq",
+    "question": "Which enzyme breaks down starch?",
+    "options": [
+      "Catalase.",
+      "Amylase.",
+      "Trypsin."
+    ],
+    "answer": 1,
+    "explanation": "Amylase."
+  },
+  {
+    "type": "mcq",
+    "question": "What does amylase break starch down into?",
+    "options": [
+      "Proteins.",
+      "Hydrogen peroxide.",
+      "Smaller carbohydrates."
+    ],
+    "answer": 2,
+    "explanation": "Smaller carbohydrates."
+  },
+  {
+    "type": "mcq",
+    "question": "Where does amylase act, according to the video?",
+    "options": [
+      "In the mouth and small intestine.",
+      "Only in the nucleus.",
+      "In muscle cells only."
+    ],
+    "answer": 0,
+    "explanation": "In the mouth and small intestine."
+  },
+  {
+    "type": "mcq",
+    "question": "Which enzyme in the video digests proteins in the small intestine?",
+    "options": [
+      "Amylase.",
+      "Trypsin.",
+      "Catalase."
+    ],
+    "answer": 1,
+    "explanation": "Trypsin, a protease that breaks proteins into smaller peptides."
+  },
+  {
+    "type": "mcq",
+    "question": "Where does trypsin act?",
+    "options": [
+      "In the mouth only.",
+      "Inside red blood cells.",
+      "In the small intestine."
+    ],
+    "answer": 2,
+    "explanation": "In the small intestine."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the overall end product of protein digestion?",
+    "options": [
+      "Amino acids.",
+      "Starch.",
+      "Hydrogen peroxide."
+    ],
+    "answer": 0,
+    "explanation": "Amino acids. Trypsin first produces smaller peptides; other digestive enzymes complete their breakdown."
+  },
+  {
+    "type": "mcq",
+    "question": "What general protein shape do enzymes have?",
+    "options": [
+      "A flat two-dimensional sheet.",
+      "A globular shape.",
+      "A long strand of starch."
+    ],
+    "answer": 1,
+    "explanation": "A globular shape."
+  },
+  {
+    "type": "mcq",
+    "question": "What is the name for a protein's specific three-dimensional structure?",
+    "options": [
+      "Primary energy.",
+      "Extracellular structure.",
+      "Tertiary structure."
+    ],
+    "answer": 2,
+    "explanation": "Tertiary structure."
+  },
+  {
+    "type": "mcq",
+    "question": "What is an enzyme's active site?",
+    "options": [
+      "The region where the substrate binds.",
+      "The product released after every reaction.",
+      "The whole cell surrounding the enzyme."
+    ],
+    "answer": 0,
+    "explanation": "The region where the substrate binds."
+  },
+  {
+    "type": "mcq",
+    "question": "What is a substrate?",
+    "options": [
+      "An enzyme's final product in every case.",
+      "The molecule an enzyme acts on.",
+      "A type of cell membrane."
+    ],
+    "answer": 1,
+    "explanation": "The molecule an enzyme acts on."
+  },
+  {
+    "type": "mcq",
+    "question": "What does a complementary active-site shape mean?",
+    "options": [
+      "It has no relation to the substrate.",
+      "It must be identical to the whole enzyme.",
+      "It fits the shape of the substrate."
+    ],
+    "answer": 2,
+    "explanation": "It fits the shape of the substrate."
+  },
+  {
+    "type": "mcq",
+    "question": "What forms when a substrate binds to an enzyme?",
+    "options": [
+      "An enzyme-substrate complex.",
+      "A new cell.",
+      "An enzyme-enzyme product."
+    ],
+    "answer": 0,
+    "explanation": "An enzyme-substrate complex."
+  },
+  {
+    "type": "mcq",
+    "question": "What forms temporarily between the enzyme and its substrate?",
+    "options": [
+      "A new nucleus.",
+      "Temporary bonds or interactions.",
+      "Permanent bonds that consume the enzyme."
+    ],
+    "answer": 1,
+    "explanation": "Temporary bonds or interactions."
+  },
+  {
+    "type": "mcq",
+    "question": "How does forming an enzyme-substrate complex help the reaction?",
+    "options": [
+      "It uses up the enzyme.",
+      "It prevents product formation.",
+      "It lowers the activation energy."
+    ],
+    "answer": 2,
+    "explanation": "It lowers the activation energy."
+  },
+  {
+    "type": "mcq",
+    "question": "What happens to the products after the reaction?",
+    "options": [
+      "They are released from the enzyme.",
+      "They always remain permanently attached.",
+      "They turn into active sites."
+    ],
+    "answer": 0,
+    "explanation": "They are released from the enzyme."
+  },
+  {
+    "type": "mcq",
+    "question": "Why can an enzyme catalyse another reaction after releasing products?",
+    "options": [
+      "It has been converted into a carbohydrate.",
+      "It remains unchanged and can bind another substrate.",
+      "It is consumed and must become a product."
+    ],
+    "answer": 1,
+    "explanation": "It remains unchanged and can bind another substrate."
+  },
+  {
+    "type": "mcq",
+    "question": "What are the two models of enzyme action?",
+    "options": [
+      "Diffusion and osmosis.",
+      "Replication and transcription.",
+      "Lock and key, and induced fit."
+    ],
+    "answer": 2,
+    "explanation": "Lock and key, and induced fit."
+  },
+  {
+    "type": "mcq",
+    "question": "How does the lock and key model describe the active site?",
+    "options": [
+      "It has a fixed shape.",
+      "It is absent until products form.",
+      "It changes into the substrate."
+    ],
+    "answer": 0,
+    "explanation": "It has a fixed shape."
+  },
+  {
+    "type": "mcq",
+    "question": "How does the substrate fit in the lock and key model?",
+    "options": [
+      "It binds anywhere on the enzyme.",
+      "It fits the active site precisely from the start.",
+      "It permanently destroys the active site."
+    ],
+    "answer": 1,
+    "explanation": "It fits the active site precisely from the start."
+  },
+  {
+    "type": "mcq",
+    "question": "Why are enzymes specific in the lock and key model?",
+    "options": [
+      "Every substrate fits every enzyme.",
+      "All enzymes have the same active site.",
+      "Only substrates with a complementary shape fit."
+    ],
+    "answer": 2,
+    "explanation": "Only substrates with a complementary shape fit."
+  },
+  {
+    "type": "mcq",
+    "question": "How does the induced fit model describe the active site?",
+    "options": [
+      "It is flexible.",
+      "It is completely rigid.",
+      "It is a separate carbohydrate."
+    ],
+    "answer": 0,
+    "explanation": "It is flexible."
+  },
+  {
+    "type": "mcq",
+    "question": "What happens to the active site when a substrate binds in the induced fit model?",
+    "options": [
+      "It leaves the enzyme.",
+      "It changes shape slightly to fit the substrate better.",
+      "It becomes permanently inactive."
+    ],
+    "answer": 1,
+    "explanation": "It changes shape slightly to fit the substrate better."
+  },
+  {
+    "type": "mcq",
+    "question": "How can induced fit help lower activation energy?",
+    "options": [
+      "It removes the substrate from the reaction.",
+      "It increases the energy barrier.",
+      "It strains bonds in the substrate, making reaction easier."
+    ],
+    "answer": 2,
+    "explanation": "It strains bonds in the substrate, making reaction easier."
+  },
+  {
+    "type": "mcq",
+    "question": "Which model has more supporting evidence, according to the video?",
+    "options": [
+      "The induced fit model.",
+      "The lock and key model.",
+      "Both have no supporting evidence."
+    ],
+    "answer": 0,
+    "explanation": "The induced fit model."
+  }
+];
+
+let currentQuestion=0;
+let score=0;
+let shuffledQuestions=[];
+
+function startGame(){
+shuffledQuestions=[...questions].sort(()=>Math.random()-0.5);
+currentQuestion=0;
+score=0;
+showQuestion();
+}
+
+function showQuestion(){
+const gameArea=document.getElementById("game-area");
+const q=shuffledQuestions[currentQuestion];
+let html=`<div><p><strong>Question ${currentQuestion+1}:</strong> ${q.question}</p>`;
+
+if(q.type==="mcq"){
+q.options.forEach((opt,idx)=>{
+html+=`<label style="display:block"><input type="radio" name="opt" value="${idx}"> ${opt}</label>`;
+});
+html+=`<button class="btn" onclick="checkMCQ()">Submit</button>`;
+}else{
+html+=`<input id="fill" type="text" style="width:100%;padding:10px;margin:10px 0;">`;
+html+=`<button class="btn" onclick="checkFill()">Submit</button>`;
+}
+
+html+=`<div id="feedback"></div></div>`;
+gameArea.innerHTML=html;
+}
+
+function checkMCQ(){
+const q=shuffledQuestions[currentQuestion];
+const sel=document.querySelector('input[name="opt"]:checked');
+if(!sel)return;
+
+const feedback=document.getElementById("feedback");
+
+if(parseInt(sel.value)===q.answer){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function checkFill(){
+const q=shuffledQuestions[currentQuestion];
+const ans=document.getElementById("fill").value.trim().toLowerCase();
+const feedback=document.getElementById("feedback");
+
+if(ans.includes(q.answerText)){
+feedback.innerHTML=`<p class="correct">Correct! ${q.explanation}</p>`;
+score++;
+}else{
+feedback.innerHTML=`<p class="incorrect">Incorrect. ${q.explanation}</p>`;
+}
+
+setTimeout(nextQuestion,1200);
+}
+
+function nextQuestion(){
+currentQuestion++;
+if(currentQuestion<shuffledQuestions.length){
+showQuestion();
+}else{
+document.getElementById("game-area").innerHTML=`<h3>Quiz Complete!</h3><p>Your score: ${score}/${shuffledQuestions.length}</p><button class="btn" onclick="startGame()">Try Again</button>`;
+}
+}
+</script>
+
+</body>
+</html>
